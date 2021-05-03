@@ -15,6 +15,7 @@ class sace extends FormApplication {
 		this.sourceTitle = sourceTitle;
 		this.sourceContent = sourceContent;
 		this.sourceId = sourceId;
+		this.options.title = `Simple Ace Code Editor: ${this.sourceTitle}`;
 	}
 
 	// configure Form Application options
@@ -25,7 +26,6 @@ class sace extends FormApplication {
 		resizable: true,
 		template: `modules/sace/saceEditor.html`,
 		id: 'simple-ace-code-editor',
-		title: `Simple Ace Code Editor: ${this.sourceTitle}`,
 		width: window.innerWidth * 3/4
 	  });
 	}
