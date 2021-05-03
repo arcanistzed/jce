@@ -8,11 +8,11 @@
     "scripts": [
         "scripts/main.js",
         "scripts/src/ace.js",
-        "src/ext-language_tools.js",
-        "src/ext-emmet.js",
-        "src/ext-elastic_tabstops_lite.js",
-        "src/ext-whitespace.js",
-        "src/spellcheck.js"
+        "scripts/src/ext-language_tools.js",
+        "scripts/src/ext-emmet.js",
+        "scripts/src/ext-elastic_tabstops_lite.js",
+        "scripts/src/ext-whitespace.js",
+        "scripts/src/spellcheck.js"
     ],
     "dependencies": [],
     "esmodules": [],
