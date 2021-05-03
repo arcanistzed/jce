@@ -14,10 +14,10 @@ Press Ctrl+Alt+h or Cmd+Alt+h to view a list of all the keyboard shortcuts avail
 Contributions are welcome via pull request.
 
 # License
-SACE is under an [[MIT license]](LICENSE) while Ace is under a [[BSD license]](https://github.com/ajaxorg/ace/blob/master/LICENSE).
+SACE is under an [MIT license](LICENSE) while Ace is under a [BSD license](https://github.com/ajaxorg/ace/blob/master/LICENSE).
 
 # Bugs
-You can submit bugs via the [[Bug Reporter module]](https://foundryvtt.com/packages/bug-reporter) or via [[Github Issues]](https://github.com/arcanistzed/sace/issues/new/choose).
+You can submit bugs via the [Bug Reporter module](https://foundryvtt.com/packages/bug-reporter) or via [Github Issues](https://github.com/arcanistzed/sace/issues/new/choose).
 
 # Contact me
 The best way to reach me is sending me a message on discord (arcanist#4317).
