@@ -42,6 +42,10 @@ class sace extends FormApplication {
 	}
 }
 
+Hooks.on('someDirectoryEntryContext', (html, contextEntries) => {
+	console.log(contextEntries)
+});
+
 Hooks.on("rendersace", app => {
 
 	// initialise ace editor
