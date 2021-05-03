@@ -25,6 +25,8 @@ jobs:
           mv ace-builds/src-min-noconflict/ scripts/
           cd scripts
           mv src-min-noconflict src
+      - name: Remove ace repo
+        run: rm -rf ace-builds/
       - name: Commit and push
         run: |
           git add .
