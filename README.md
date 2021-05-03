@@ -1,5 +1,5 @@
 # sace
-Simple Ace Code Editor is a module for Foundry VTT that allows you to modify the source of your Journal Entries using Ace editor.
+Simple Ace Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using Ace editor.
 
 # Installation
 In the setup screen, use the URL https://raw.githubusercontent.com/arcanistzed/sace/main/module.json to install the module.
