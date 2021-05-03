@@ -41,7 +41,7 @@
     "download": "https://github.com/arcanistzed/sace/releases/latest/download/module.zip",
     "license": "https://github.com/arcanistzed/sace/blob/main/LICENSE",
     "readme": "https://github.com/arcanistzed/sace/blob/main/README.md",
-    "bugs": "https://github.com/arcanistzed/sace/issues/new/choose",
+    "bugs": "https://github.com/arcanistzed/sace/issues",
     "changelog": "https://github.com/arcanistzed/sace/blob/main/README.md",
     "coreVersion": "0.7.9"
   }
