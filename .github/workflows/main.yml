@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     name: update_ace
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
       - name: Clone the ace repo
         run: git clone https://github.com/ajaxorg/ace-builds.git
@@ -25,8 +26,11 @@ jobs:
           mv ace-builds/src-min-noconflict/ scripts/
           cd scripts
           mv src-min-noconflict src
-      - name: Commit and push
-        run: |
-          git add .
-          git commit -m "Update ace"
-          git push
+          
+      - name: Remove ace repo
+        run: rm -rf ace-builds/
+        
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Update ace"

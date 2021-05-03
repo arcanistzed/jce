@@ -27,3 +27,4 @@ The best way to reach me is sending me a message on discord (arcanist#4317).
  - Add option to disable auto-open once there is a context menu option
  - Add options to configure ace settings from withing module settings
  - Make ace settings more visible
+ - Localize
