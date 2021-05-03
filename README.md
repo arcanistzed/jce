@@ -5,10 +5,10 @@ Simple Ace Code Editor is a module for Foundry VTT that allows you to modify the
 In the setup screen, use the URL https://raw.githubusercontent.com/arcanistzed/sace/main/module.json to install the module.
 
 # Usage
-Just open a journal entry and you will see the edior open up. When you are done editing, make sure to click the save button so that you don't lose your changes.
+Just open a journal entry and you will see the editor open up. When you are done editing, make sure to click the save button so that you don't lose your changes.
 
 ## Using Ace
-Press Ctrl+Alt+h or Cmd+Alt+h to view a list of all the keyboard shortcuts available. You can access the command pallette by pressing F1 while focusing on the editor.
+Press Ctrl+Alt+h or Cmd+Alt+h to view a list of all the keyboard shortcuts available. You can access the command palette by pressing F1 while focusing on the editor.
 
 # Contributing
 Contributions are welcome via pull request.
