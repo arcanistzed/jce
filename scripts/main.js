@@ -1,12 +1,16 @@
 var sourceContent;
 
-// when a journal sheet is opened, render the sace editor
-Hooks.on("renderJournalSheet", app => {
-	var sourceContent = app.object.data.content.trim();
-	var sourceTitle = app.object.data.name
-	var sourceId = app.object.data._id
-	new sace(sourceTitle, sourceContent, sourceId).render(true);
-});
+// if the user has enabled it, when a journal sheet is opened, render the sace editor
+Hooks.on("renderSettings", () => {
+	if (await game.settings.set("sace", "AutoOpen") === true) {
+		Hooks.on("renderJournalSheet", app => {
+			var sourceContent = app.object.data.content.trim();
+			var sourceTitle = app.object.data.name
+			var sourceId = app.object.data._id
+			new sace(sourceTitle, sourceContent, sourceId).render(true);
+		});
+	};
+})
 
 // create sace editor Form Application
 class sace extends FormApplication {
@@ -42,8 +46,21 @@ class sace extends FormApplication {
 	}
 }
 
-Hooks.on('someDirectoryEntryContext', (html, contextEntries) => {
-	console.log(contextEntries)
+// Add context menu option for opening the sace editor
+Hooks.on('getJournalDirectoryEntryContext', (html, contextEntries) => {
+	contextEntries.push({
+		name: "Open with sace",
+		icon: `<i class="fas fa-code"></i>`,
+		condition: {},
+		callback: data => {
+			var sourceId = data[0].dataset.entityId
+			var sourceJournal = game.journal.get(sourceId)
+			if (sourceJournal.data.content != null) {var sourceContent = sourceJournal.data.content.trim()}; // only trim content if content exists
+			var sourceTitle = sourceJournal.data.name
+			
+			new sace(sourceTitle, sourceContent, sourceId).render(true); // render sace editor
+		}
+	})
 });
 
 Hooks.on("rendersace", app => {
