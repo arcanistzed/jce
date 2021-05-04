@@ -133,9 +133,7 @@ Hooks.on("rendersace", app => {
 		enableBasicAutocompletion: true,
 		enableSnippets: true,
         enableLiveAutocompletion: true,
-		enableEmmet: true,
-		useElasticTabstops: true,
-		spellcheck: true
+		useElasticTabstops: true
 	});
 
 	// show keyboard shortcuts
@@ -149,8 +147,6 @@ Hooks.on("rendersace", app => {
             })
         }
     });
-
-	editor.commands.addCommands(whitespace.commands); // add commands from "src/ext-whitespace.js"
 
 	// suppress DOCTYPE warning
 	var session = editor.getSession();

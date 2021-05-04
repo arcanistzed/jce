@@ -10,10 +10,7 @@
         "scripts/settings.js",
         "scripts/src/ace.js",
         "scripts/src/ext-language_tools.js",
-        "scripts/src/ext-emmet.js",
-        "scripts/src/ext-elastic_tabstops_lite.js",
-        "scripts/src/ext-whitespace.js",
-        "scripts/src/spellcheck.js"
+        "scripts/src/ext-elastic_tabstops_lite.js"
     ],
     "dependencies": [],
     "esmodules": [],
