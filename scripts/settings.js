@@ -27,6 +27,57 @@ Hooks.on("init", () => {
 		};
 	}
 
+	game.settings.register("sace", "AceConfig", {
+        scope: "client",
+        type: String,
+        config: false,
+        default: JSON.stringify({
+			selectionStyle: "text",
+			highlightActiveLine: false,
+			highlightSelectedWord: true,
+			readOnly: false,
+			cursorStyle: "smooth",
+			mergeUndoDeltas: "always",
+			behavioursEnabled: true,
+			wrapBehavioursEnabled: true,
+			autoScrollEditorIntoView: false,
+			copyWithEmptySelection: true,
+			useSoftTabs: true,
+			navigateWithinSoftTabs: true,
+			enableMultiselect: true,
+			hScrollBarAlwaysVisible: false,
+			vScrollBarAlwaysVisible: false,
+			highlightGutterLine: true,
+			animatedScroll: true,
+			showInvisibles: true,
+			showPrintMargin: false,
+			printMarginColumn: 80,
+			printMargin: false ,
+			fadeFoldWidgets: true,
+			showFoldWidgets: true,
+			showLineNumbers: true,
+			showGutter: true,
+			displayIndentGuides: true,
+			fontSize: 15,
+			fontFamily: "monospace",
+			scrollPastEnd: 0.5,
+			fixedWidthGutter: false,
+			theme: "ace/theme/monokai",
+			newLineMode: "unix",
+			useWorker: true,
+			useSoftTabs: true,
+			tabSize: 4,
+			wrap: true,
+			foldStyle: "markbegin",
+			mode: "ace/mode/html",
+			enableBasicAutocompletion: true,
+			enableSnippets: true,
+			enableLiveAutocompletion: true,
+			useElasticTabstops: true,
+			KeyboardHandler: "ace/mode/vscode"
+		})
+    });
+
     game.settings.register("sace", "AutoOpen", {
         name: game.i18n.localize("SACE.AutoOpen.Name"),
         hint: game.i18n.localize("SACE.AutoOpen.Hint"),
