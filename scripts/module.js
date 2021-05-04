@@ -77,8 +77,8 @@ Hooks.on("rendersace", app => {
 	editor.commands.addCommand({
         name: "showKeyboardShortcuts",
         bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
-        exec: function(editor) {
-            ace.config.loadModule("ace/ext/keybinding_menu", function(module) {
+        exec: editor => {
+            ace.config.loadModule("ace/ext/keybinding_menu", module => {
                 module.init(editor);
                 editor.showKeyboardShortcuts()
             })
@@ -94,7 +94,7 @@ Hooks.on("rendersace", app => {
 				annotations.splice(i, 1);
 			};
  		};
-		if(len>annotations.length) {
+		if (len>annotations.length) {
 			session.setAnnotations(annotations);
 		};
 	});
