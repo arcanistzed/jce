@@ -19,7 +19,7 @@ class sace extends FormApplication {
 		this.sourceTitle = sourceTitle;
 		this.sourceContent = sourceContent;
 		this.sourceId = sourceId;
-		this.options.title = `Simple Ace Code Editor: ${this.sourceTitle}`;
+		this.options.title = `${game.i18n.localize("Simple Ace Code Editor")}: ${this.sourceTitle}`;
 	}
 
 	// configure Form Application options
@@ -49,7 +49,7 @@ class sace extends FormApplication {
 // Add context menu option for opening the sace editor
 Hooks.on('getJournalDirectoryEntryContext', (html, contextEntries) => {
 	contextEntries.push({
-		name: "Open with sace",
+		name: game.i18n.localize("SACE.ContextMenu"),
 		icon: `<i class="fas fa-code"></i>`,
 		condition: {},
 		callback: data => {
@@ -133,17 +133,17 @@ Hooks.on("rendersace", app => {
 
 	editor.commands.addCommands(whitespace.commands); // add commands from "src/ext-whitespace.js"
 
-	//suppress DOCTYPE warning
+	// suppress DOCTYPE warning
 	var session = editor.getSession();
-	session.on("changeAnnotation", function() {
-  	var annotations = session.getAnnotations()||[], i = len = annotations.length;
-  	while (i--) {
-    	if(/doctype first\. Expected/.test(annotations[i].text)) {
-      		annotations.splice(i, 1);
-    	}
- 	}
-  	if(len>annotations.length) {
-    	session.setAnnotations(annotations);
-  	}
-});
+	session.on("changeAnnotation", () => {
+		var annotations = session.getAnnotations()||[], i = len = annotations.length;
+		while (i--) {
+			if(/doctype first\. Expected/.test(annotations[i].text)) {
+				annotations.splice(i, 1);
+			}
+ 		}
+		if(len>annotations.length) {
+			session.setAnnotations(annotations);
+		}
+	});
 });

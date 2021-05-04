@@ -2,8 +2,8 @@ Hooks.on("init", registerSettings)
 
 function registerSettings(){
     game.settings.register("sace", "AutoOpen", {
-        name: "Auto-Open Editor",
-        hint: "When enabled, the sace editor will open each time you open a journal entry.",
+        name: "SACE.AutoOpen.Name",
+        hint: "SACE.AutoOpen.Hint",
         scope: "client",
         type: Boolean,
         config: true,
@@ -11,8 +11,8 @@ function registerSettings(){
     });
 
     game.settings.registerMenu("sace", "AceSettings", {
-        name: "Configure Ace",
-        label: "Ace Settings",
+        name: "SACE.AceSettings.Name",
+        label: "SACE.AceSettings.Label",
         icon: "fas fa-cogs",
         type: sace,
         restricted: false
