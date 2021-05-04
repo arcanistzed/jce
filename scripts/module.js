@@ -1,25 +1,5 @@
 var sourceContent;
 
-// Add settings
-Hooks.on("init", () => {
-    game.settings.register("sace", "AutoOpen", {
-        name: game.i18n.localize("SACE.AutoOpen.Name"),
-        hint: game.i18n.localize("SACE.AutoOpen.Hint"),
-        scope: "client",
-        type: Boolean,
-        config: true,
-        default: false
-    });
-
-    game.settings.registerMenu("sace", "AceSettings", {
-        name: game.i18n.localize("SACE.AceSettings.Name"),
-        label: game.i18n.localize("SACE.AceSettings.Label"),
-        icon: "fas fa-cogs",
-        type: sace,
-        restricted: false
-    });
-});
-
 // If the user has enabled it, when a journal sheet is opened, render the sace editor
 Hooks.on("renderJournalSheet", app => {
 	var AutoOpen = game.settings.get("sace", "AutoOpen");
@@ -47,7 +27,7 @@ class sace extends FormApplication {
 		classes: ['form'],
 		popOut: true,
 		resizable: true,
-		template: `modules/sace/saceEditor.html`,
+		template: `modules/sace/templates/saceEditor.html`,
 		id: 'simple-ace-code-editor',
 		width: window.innerWidth * 3/4
 	  });
@@ -91,50 +71,7 @@ Hooks.on("rendersace", app => {
 	editor.setValue(app.sourceContent);
 	
 	// set default options
-	editor.setOptions({
-		selectionStyle: "text",
-		highlightActiveLine: false,
-		highlightSelectedWord: true,
-		readOnly: false,
-		cursorStyle: "smooth",
-		mergeUndoDeltas: "always",
-		behavioursEnabled: true,
-		wrapBehavioursEnabled: true,
-		autoScrollEditorIntoView: false,
-		copyWithEmptySelection: true,
-		useSoftTabs: true,
-		navigateWithinSoftTabs: true,
-		enableMultiselect: true,
-		hScrollBarAlwaysVisible: false,
-		vScrollBarAlwaysVisible: false,
-		highlightGutterLine: true,
-		animatedScroll: true,
-		showInvisibles: true,
-		showPrintMargin: false,
-		printMarginColumn: 80,
-		printMargin: false ,
-		fadeFoldWidgets: true,
-		showFoldWidgets: true,
-		showLineNumbers: true,
-		showGutter: true,
-		displayIndentGuides: true,
-		fontSize: 15,
-		fontFamily: "monospace",
-		scrollPastEnd: 0.5,
-		fixedWidthGutter: false,
-		theme: "ace/theme/monokai",
-		newLineMode: "unix",
-		useWorker: true,
-		useSoftTabs: true,
-		tabSize: 4,
-		wrap: true,
-		foldStyle: "markbegin",
-		mode: "ace/mode/html",
-		enableBasicAutocompletion: true,
-		enableSnippets: true,
-        enableLiveAutocompletion: true,
-		useElasticTabstops: true
-	});
+	editor.setOptions(game.settings.get("sace", "AceConfig"));
 
 	// show keyboard shortcuts
 	editor.commands.addCommand({
