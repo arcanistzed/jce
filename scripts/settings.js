@@ -102,4 +102,7 @@ Hooks.on("renderAceSettings", () => {
 
 	// populate with current settings
 	editor.setValue(game.settings.get("sace", "AceConfig"));
+
+	// set ace options
+	editor.setOptions(game.settings.get("sace", "AceConfig"));
 });
