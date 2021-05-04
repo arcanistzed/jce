@@ -1,12 +1,11 @@
 {
-    "SACE.Save": "Save",
     "SACE.ContextMenu": "Open with sace",
 
-    "SACE.AutoOpen.Name": "Auto-Open Editor",
-    "SACE.AutoOpen.Hint": "When enabled, the sace editor will open each time you open a journal entry.",
+    "SACE.settings.AutoOpen.Name": "Auto-Open Editor",
+    "SACE.settings.AutoOpen.Hint": "When enabled, the sace editor will open each time you open a journal entry.",
 
-    "SACE.AceSettings.Name": "Configure Ace",
-    "SACE.AceSettings.Label": "Ace Settings",
+    "SACE.settings.AceSettings.Name": "Configure Ace",
+    "SACE.settings.AceSettings.Label": "Ace Settings",
 
     "SACE.Title": "Simple Ace Code Editor"
 }
