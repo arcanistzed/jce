@@ -70,7 +70,7 @@ Hooks.on("rendersace", app => {
 	// populate with journal entry source code
 	editor.setValue(app.sourceContent);
 	
-	// set default options
+	// set ace options
 	editor.setOptions(game.settings.get("sace", "AceConfig"));
 
 	// show keyboard shortcuts
