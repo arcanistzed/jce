@@ -6,7 +6,7 @@
     "minimumCoreVersion": "0.7.9",
     "compatibleCoreVersion": "0.7.9",
     "scripts": [
-        "scripts/main.js",
+        "scripts/module.js",
         "scripts/settings.js",
         "scripts/src/ace.js",
         "scripts/src/ext-language_tools.js",
