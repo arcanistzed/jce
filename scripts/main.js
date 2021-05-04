@@ -22,14 +22,13 @@ Hooks.on("init", () => {
 
 // If the user has enabled it, when a journal sheet is opened, render the sace editor
 Hooks.on("renderJournalSheet", app => {
-	game.settings.get("sace", "AutoOpen").then(AutoOpen => {
-		if (AutoOpen === true) {
-			var sourceContent = app.object.data.content.trim();
-			var sourceTitle = app.object.data.name;
-			var sourceId = app.object.data._id;
-			new sace(sourceTitle, sourceContent, sourceId).render(true);
-		};
-	});
+	var AutoOpen = game.settings.get("sace", "AutoOpen");
+	if (AutoOpen === true) {
+		var sourceContent = app.object.data.content.trim();
+		var sourceTitle = app.object.data.name;
+		var sourceId = app.object.data._id;
+		new sace(sourceTitle, sourceContent, sourceId).render(true);
+	};
 });
 
 // create sace editor Form Application
