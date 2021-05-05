@@ -8,9 +8,9 @@
     "scripts": [
         "scripts/module.js",
         "scripts/settings.js",
-        "scripts/src/ace.js",
-        "scripts/src/ext-language_tools.js",
-        "scripts/src/ext-elastic_tabstops_lite.js"
+        "scripts/lib/ace.js",
+        "scripts/lib/ext-language_tools.js",
+        "scripts/lib/ext-elastic_tabstops_lite.js"
     ],
     "dependencies": [],
     "esmodules": [],
