@@ -2,10 +2,10 @@
  * Defines a set of configuartion options for Ace editors
  */
 
-var saceConfig = {};
+var jceConfig = {};
 
 Hooks.once("init", function () {
-	const namespace = "sace";
+	const namespace = "jce";
 	const settings = [];
 
 	/**
@@ -37,10 +37,10 @@ Hooks.once("init", function () {
 	}
 
 	/** 
-	 * Add a getter to sace that returns an object containing all the settings
-	 * from the settings array. These can be passed directly to the sace initialization.
+	 * Add a getter to jce that returns an object containing all the settings
+	 * from the settings array. These can be passed directly to the jce initialization.
 	 */
-	Object.defineProperty(saceConfig, "userSettings", {
+	Object.defineProperty(jceConfig, "userSettings", {
 		get: () => { return Object.fromEntries(
 			settings.map(name => [name, game.settings.get(namespace, name)])
 		)}
@@ -76,56 +76,19 @@ Hooks.once("init", function () {
 	register("scrollPastEnd", Number, undefined, 0.5, true);
 	register("fixedWidthGutter", Boolean, undefined, false, true);
 	register("theme", String, {
-		"ambiance":"ace/theme/ambiance",
-		"chaos":"ace/theme/chaos",
-		"chrome":"ace/theme/chrome",
-		"clouds":"ace/theme/clouds",
-		"clouds_midnight":"ace/theme/clouds_midnight",
-		"cobalt":"ace/theme/cobalt",
-		"crimson_editor":"ace/theme/crimson_editor",
-		"dawn":"ace/theme/dawn",
-		"dracula":"ace/theme/dracula",
-		"dreamweaver":"ace/theme/dreamweaver",
-		"eclipse":"ace/theme/eclipse",
-		"github":"ace/theme/github",
-		"gob":"ace/theme/gob",
-		"gruvbox":"ace/theme/gruvbox",
-		"idle_fingers":"ace/theme/idle_fingers",
-		"iplastic":"ace/theme/iplastic",
-		"katzenmilch":"ace/theme/katzenmilch",
-		"kr_theme":"ace/theme/kr_theme",
-		"kuroir":"ace/theme/kuroir",
-		"merbivore":"ace/theme/merbivore",
-		"merbivore_soft":"ace/theme/merbivore_soft",
-		"mono_industrial":"ace/theme/mono_industrial",
-		"monokai":"ace/theme/monokai",
-		"nord_dark":"ace/theme/nord_dark",
-		"pastel_on_dark":"ace/theme/pastel_on_dark",
-		"solarized_dark":"ace/theme/solarized_dark",
-		"solarized_light":"ace/theme/solarized_light",
-		"sqlserver":"ace/theme/sqlserver",
-		"terminal":"ace/theme/terminal",
-		"textmate":"ace/theme/textmate",
-		"tomorrow":"ace/theme/tomorrow",
-		"tomorrow_night_blue":"ace/theme/tomorrow_night_blue",
-		"tomorrow_night_bright":"ace/theme/tomorrow_night_bright",
-		"tomorrow_night_eighties":"ace/theme/tomorrow_night_eighties",
-		"tomorrow_night":"ace/theme/tomorrow_night",
-		"twilight":"ace/theme/twilight",
-		"vibrant_ink":"ace/theme/vibrant_ink",
-		"xcode":"ace/theme/xcode"
+		"ace/theme/ambiance": "ambiance", "ace/theme/chaos": "chaos", "ace/theme/chrome": "chrome", "ace/theme/clouds": "clouds", "ace/theme/clouds_midnight": "clouds_midnight", "ace/theme/cobalt": "cobalt", "ace/theme/crimson_editor": "crimson_editor", "ace/theme/dawn": "dawn", "ace/theme/dracula": "dracula", "ace/theme/dreamweaver": "dreamweaver", "ace/theme/eclipse": "eclipse", "ace/theme/github": "github", "ace/theme/gob": "gob", "ace/theme/gruvbox": "gruvbox", "ace/theme/idle_fingers": "idle_fingers", "ace/theme/iplastic": "iplastic", "ace/theme/katzenmilch": "katzenmilch", "ace/theme/kr_theme": "kr_theme", "ace/theme/kuroir": "kuroir", "ace/theme/merbivore": "merbivore", "ace/theme/merbivore_soft": "merbivore_soft", "ace/theme/mono_industrial": "mono_industrial", "ace/theme/monokai": "monokai", "ace/theme/nord_dark": "nord_dark", "ace/theme/pastel_on_dark": "pastel_on_dark", "ace/theme/solarized_dark": "solarized_dark", "ace/theme/solarized_light": "solarized_light", "ace/theme/sqlserver": "sqlserver", "ace/theme/terminal": "terminal", "ace/theme/textmate": "textmate", "ace/theme/tomorrow": "tomorrow", "ace/theme/tomorrow_night_blue": "tomorrow_night_blue", "ace/theme/tomorrow_night_bright": "tomorrow_night_bright", "ace/theme/tomorrow_night_eighties": "tomorrow_night_eighties", "ace/theme/tomorrow_night": "tomorrow_night", "ace/theme/twilight": "twilight", "ace/theme/vibrant_ink": "vibrant_ink", "ace/theme/xcode": "xcode"
 	}, "ace/theme/monokai", true);
 	register("newLineMode", String, { "auto": "auto", "unix": "unix", "windows": "windows" }, "unix", true);
 	register("useWorker", Boolean, undefined, true, true);
 	register("tabSize", Number, undefined, 4, true);
 	register("wrap", Boolean, undefined, true, true);
 	register("foldStyle", String, { "markbegin": "markbegin", "markbeginend": "markbeginend", "manual": "manual" }, "markbegin", true);
-	register("mode", String, { "html": "ace/mode/html", "markdown": "ace/mode/markdown", "textile": "ace/mode/textile", "text": "ace/mode/text" }, "ace/mode/html", true);
+	register("mode", String, { "ace/mode/html": "html", "ace/mode/markdown": "markdown", "ace/mode/textile": "textile", "ace/mode/text": "text" }, "ace/mode/html", true);
 	register("enableBasicAutocompletion", Boolean, undefined, true, true);
 	register("enableSnippets", Boolean, undefined, true, true);
 	register("enableLiveAutocompletion", Boolean, undefined, true, true);
 	register("useElasticTabstops", Boolean, undefined, true, true);
-	register("KeyboardHandler", String, { "emacs": "ace/mode/emacs", "sublime": "ace/mode/sublime", "vim": "ace/mode/vim", "vscode": "ace/mode/vscode" }, "ace/mode/vscode", true);
+	register("KeyboardHandler", String, { "ace/mode/emacs": "emacs", "ace/mode/sublime": "sublime", "ace/mode/vim": "vim", "ace/mode/vscode": "vscode" }, "ace/mode/vscode", true);
 	register("hScrollBarAlwaysVisible", Boolean, undefined, false, true);
 	register("vScrollBarAlwaysVisible", Boolean, undefined, false, true);
 	register("maxLines", Number, undefined, undefined, true);
@@ -141,8 +104,8 @@ Hooks.once("init", function () {
 	register("useSoftTabs", Boolean, undefined, true, true);
 	register("indentedSoftWrap", Boolean, undefined, true, true);
 
-	console.log("saceConfig SETTINGS HERE!!!");
+	console.log("jceConfig SETTINGS HERE!!!");
 	console.table(settings);
-	console.table(saceConfig);
-	console.log(settings, saceConfig);
+	console.table(jceConfig);
+	console.log(settings, jceConfig);
 });
