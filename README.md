@@ -29,5 +29,4 @@ You can submit bugs via the [Bug Reporter module](https://foundryvtt.com/package
 The best way to reach me is sending me a message on discord (arcanist#4317).
 
 # Todos
- - Add Hints for settings
- - Finish french translations
+ - Add Explanations for settings
