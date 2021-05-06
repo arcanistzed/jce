@@ -7,132 +7,136 @@
 				"Name":"Automatiquement ouvrir l'éditeur",
 				"Hint":"Lorsque c'est activé, l'éditeur ecj s'ouvre automatiquement à chaque fois que vous ouvrez une entrée de journal."
 			},
+			"CodeMirror": {
+				"Name": "Utiliser Code Mirror",
+				"Hint": "Remplace l'éditeur Ace avec celui de Code Mirror"
+			},
 			"selectionStyle":{
-				"Name":"Selection Style",
+				"Name":"Style de Séléction",
 				"Hint":"        "
 			},
 			"highlightActiveLine":{
-				"Name":"Highlight Active Line",
+				"Name":"surligner la ligne active",
 				"Hint":"        "
 			},
 			"highlightSelectedWord":{
-				"Name":"Highlight Selected Word",
+				"Name":"Surligner le mot actif",
 				"Hint":"        "
 			},
 			"readOnly":{
-				"Name":"Read Only",
+				"Name":"Lecture Seulement",
 				"Hint":"        "
 			},
 			"cursorStyle":{
-				"Name":"Cursor Style",
+				"Name":"Style de curseur",
 				"Hint":"        "
 			},
 			"mergeUndoDeltas":{
-				"Name":"Merge Undo Deltas",
+				"Name":"Fusionner les deltas d'annulation",
 				"Hint":"        "
 			},
 			"behavioursEnabled":{
-				"Name":"Behaviours Enabled",
+				"Name":"Activé les comportements",
 				"Hint":"        "
 			},
 			"wrapBehavioursEnabled":{
-				"Name":"Wrap Behaviours Enabled",
+				"Name":"Activé les comportements de retour à la ligne",
 				"Hint":"        "
 			},
 			"autoScrollEditorIntoView":{
-				"Name":"Auto Scroll Editor Into View",
+				"Name":"Automtiquement défilé l'éditeur jusqu'en vue",
 				"Hint":"        "
 			},
 			"displayIndentGuides":{
-				"Name":"Display Indent Guides",
+				"Name":"Afficher les guides de retrait",
 				"Hint":"        "
 			},
 			"navigateWithinSoftTabs":{
-				"Name":"Navigate Within Soft Tabs",
+				"Name":"Navigué dans les tabulations doux",
 				"Hint":"        "
 			},
 			"enableMultiselect":{
-				"Name":"Enable Multiselect",
+				"Name":"Activé la multiselection",
 				"Hint":"        "
 			},
 			"highlightGutterLine":{
-				"Name":"Highlight Gutter Line",
+				"Name":"Surligner la ligne de Gouttière",
 				"Hint":"        "
 			},
 			"animatedScroll":{
-				"Name":"Animated Scroll",
+				"Name":"Défilement animé",
 				"Hint":"        "
 			},
 			"showInvisibles":{
-				"Name":"Show Invisibles",
+				"Name":"Afficher les caractères invisibles",
 				"Hint":"        "
 			},
 			"showPrintMargin":{
-				"Name":"Show Print Margin",
+				"Name":"Afficher la marge d'impression",
 				"Hint":"        "
 			},
 			"printMarginColumn":{
-				"Name":"Print Margin Column",
+				"Name":"Colonne de la marge d'impression",
 				"Hint":"        "
 			},
 			"printMargin":{
-				"Name":"Print Margin",
+				"Name":"Marge d'impression",
 				"Hint":"        "
 			},
 			"fadeFoldWidgets":{
-				"Name":"Fade Fold Widgets",
+				"Name":"Effacé les widgets de pliage en survolant",
 				"Hint":"        "
 			},
 			"showFoldWidgets":{
-				"Name":"Show Fold Widgets",
+				"Name":"Toujour montré les widgets de pliage",
 				"Hint":"        "
 			},
 			"showLineNumbers":{
-				"Name":"Show Line Numbers",
+				"Name":"Montrer les numéros de ligne",
 				"Hint":"        "
 			},
 			"showGutter":{
-				"Name":"Show Gutter",
+				"Name":"Montrer la Gouttière",
 				"Hint":"        "
 			},
 			"fontSize":{
-				"Name":"Font Size",
+				"Name":"Taille de la police",
 				"Hint":"        "
 			},
 			"fontFamily":{
-				"Name":"Font Family",
+				"Name":"Famille de polices",
 				"Hint":"        "
 			},
 			"scrollPastEnd":{
-				"Name":"Scroll Past End",
+				"Name":"Défilement au-delà de la fin",
 				"Hint":"        "
 			},
 			"fixedWidthGutter":{
-				"Name":"Fixed Width Gutter",
+				"Name":"Gouttière à largeur fixe",
 				"Hint":"        "
 			},
 			"theme":{
-				"Name":"Theme",
+				"Name":"Thème",
 				"Hint":"        "
 			},
 			"newLineMode":{
-				"Name":"New Line Mode",
+				"Name":"Mode de nouvelle ligne",
 				"Hint":"        "
 			},
 			"useWorker":{
-				"Name":"Use Worker",
+				"Name":"Utiliser le travailleur",
 				"Hint":"        "
 			},
 			"tabSize":{
-				"Name":"Tab Size",
+				"Name":"Taille des tabulations",
 				"Hint":"        "
 			},
 			"wrap":{
-				"Name":"Wrap",
+				"Name":"Retour à la ligne",
 				"Hint":"        "
 			},
 			"foldStyle":{
-				"Name":"Fold Style",
+				"Name":"Style de pliage",
 				"Hint":"        "
 			},
 			"mode":{
@@ -140,79 +144,79 @@
 				"Hint":"        "
 			},
 			"enableBasicAutocompletion":{
-				"Name":"Enable Basic Autocompletion",
+				"Name":"Activer l'autocomplétion de base",
 				"Hint":"        "
 			},
 			"enableSnippets":{
-				"Name":"Enable Snippets",
+				"Name":"Activer les snippets",
 				"Hint":"        "
 			},
 			"enableLiveAutocompletion":{
-				"Name":"Enable Live Autocompletion",
+				"Name":"Activer les snippets",
 				"Hint":"        "
 			},
 			"useElasticTabstops":{
-				"Name":"Use Elastic Tabstops",
+				"Name":"Utiliser des tabulations elastique",
 				"Hint":"        "
 			},
 			"KeyboardHandler":{
-				"Name":"Keyboard Handler",
+				"Name":"Gestionnaire de clavier",
 				"Hint":"        "
 			},
 			"hScrollBarAlwaysVisible":{
-				"Name":"h Scroll Bar Always Visible",
+				"Name":"Barre de défilement horizontale toujours visible",
 				"Hint":"        "
 			},
 			"vScrollBarAlwaysVisible":{
-				"Name":"v Scroll Bar Always Visible",
+				"Name":"Barre de défilement verticale toujours visible",
 				"Hint":"        "
 			},
 			"maxLines":{
-				"Name":"Max Lines",
+				"Name":"Nombre maximal de lignes",
 				"Hint":"        "
 			},
 			"minLines":{
-				"Name":"Min Lines",
+				"Name":"Nombre minimale de lignes",
 				"Hint":"        "
 			},
 			"maxPixelHeight":{
-				"Name":"Max Pixel Height",
+				"Name":"Hauteur maximale en pixel",
 				"Hint":"        "
 			},
 			"scrollSpeed":{
-				"Name":"Scroll Speed",
+				"Name":"Vitesse de défilement",
 				"Hint":"        "
 			},
 			"dragDelay":{
-				"Name":"Drag Delay",
+				"Name":"Délai pour Glisser-déposer",
 				"Hint":"        "
 			},
 			"dragEnabled":{
-				"Name":"Drag Enabled",
+				"Name":"Activé le Glisser-déposer",
 				"Hint":"        "
 			},
-			"focusTimout":{
-				"Name":"Focus Timout",
+			"focusTimeout":{
+				"Name":"Délai de mise au point",
 				"Hint":"        "
 			},
 			"tooltipFollowsMouse":{
-				"Name":"Tooltip Follows Mouse",
+				"Name":"L'info-bulle suit la souris",
 				"Hint":"        "
 			},
 			"firstLineNumber":{
-				"Name":"First Line Number",
+				"Name":"Numéro de la première ligne",
 				"Hint":"        "
 			},
 			"overwrite":{
-				"Name":"Overwrite",
+				"Name":"Écraser",
 				"Hint":"        "
 			},
 			"useSoftTabs":{
-				"Name":"Use Soft Tabs",
+				"Name":"Utilisez des tabulations molles",
 				"Hint":"        "
 			},
 			"indentedSoftWrap":{
-				"Name":"Indented Soft Wrap",
+				"Name":"Indentation molle des retours à la ligne",
 				"Hint":"        "
 			}
 		}
