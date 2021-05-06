@@ -25,5 +25,5 @@ You can submit bugs via the [Bug Reporter module](https://foundryvtt.com/package
 The best way to reach me is sending me a message on discord (arcanist#4317).
 
 # Todos
- - Add options to configure ace settings from withing module settings (add setting for each option)
- - Make ace settings more visible
+ - Add Hints for settings
+ - Finish french translations
