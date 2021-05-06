@@ -1,0 +1,11 @@
+{
+    "SACE.ContextMenu": "Ouvrir avec le sace",
+
+    "SACE.settings.AutoOpen.Name": "Automatiquement ouvrir l'éditeur",
+    "SACE.settings.AutoOpen.Hint": "Lorsque c'est activé, l'éditeur sace s'ouvre automatiquement à chaque fois que vous ouvrez une entrée de journal.",
+
+    "SACE.settings.AceSettings.Name": "Configuré Ace",
+    "SACE.settings.AceSettings.Label": "Paramètres Ace",
+
+    "SACE.Title": "Simple Application Consacré à l'Édition"
+}

@@ -1,4 +1,6 @@
 # sace
+![](https://img.shields.io/github/v/tag/arcanistzed/sace)
+
 Simple Ace Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using Ace editor.
 
 # Installation
@@ -22,9 +24,6 @@ You can submit bugs via the [Bug Reporter module](https://foundryvtt.com/package
 # Contact me
 The best way to reach me is sending me a message on discord (arcanist#4317).
 
-# Todo
- - Add context menu option for opening with sace
- - Add option to disable auto-open once there is a context menu option
- - Add options to configure ace settings from withing module settings
+# Todos
+ - Add options to configure ace settings from withing module settings (add setting for each option)
  - Make ace settings more visible
- - Localize
