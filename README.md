@@ -27,3 +27,5 @@ The best way to reach me is sending me a message on discord (arcanist#4317).
 # Todos
  - Add Hints for settings
  - Finish french translations
+ - Move some settings to a seperate menu
+ - Add option to use codemirror instead if it's installed
