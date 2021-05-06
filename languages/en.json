@@ -7,6 +7,10 @@
 				"Name":"Auto-Open Editor",
 				"Hint":"When enabled, the jce editor will open each time you open a journal entry."
 			},
+			"CodeMirror": {
+				"Name": "Use Code Mirror",
+				"Hint": "Replaces the Ace editor with Code Mirror"
+			},
 			"selectionStyle":{
 				"Name":"Selection Style",
 				"Hint":"        "
@@ -160,19 +164,19 @@
 				"Hint":"        "
 			},
 			"hScrollBarAlwaysVisible":{
-				"Name":"h Scroll Bar Always Visible",
+				"Name":"Horizontal Scroll Bar Always Visible",
 				"Hint":"        "
 			},
 			"vScrollBarAlwaysVisible":{
-				"Name":"v Scroll Bar Always Visible",
+				"Name":"Vertical Scroll Bar Always Visible",
 				"Hint":"        "
 			},
 			"maxLines":{
-				"Name":"Max Lines",
+				"Name":"Max Number of Lines",
 				"Hint":"        "
 			},
 			"minLines":{
-				"Name":"Min Lines",
+				"Name":"Min Number of Lines",
 				"Hint":"        "
 			},
 			"maxPixelHeight":{
@@ -184,15 +188,15 @@
 				"Hint":"        "
 			},
 			"dragDelay":{
-				"Name":"Drag Delay",
+				"Name":"Drag-and-drop Delay ",
 				"Hint":"        "
 			},
 			"dragEnabled":{
-				"Name":"Drag Enabled",
+				"Name":"Enable Drag-and-drop",
 				"Hint":"        "
 			},
-			"focusTimout":{
-				"Name":"Focus Timout",
+			"focusTimeout":{
+				"Name":"Focus Timeout",
 				"Hint":"        "
 			},
 			"tooltipFollowsMouse":{

@@ -35,7 +35,18 @@ class jce extends FormApplication {
 
 	// when saved, update journal entry with new data
 	async _updateObject() {
-		var editor = ace.edit(document.getElementById("editor"));
+		
+		var editor;
+
+		// Check if user is using CodeMirror or Ace
+		if (game.modules.get("_CodeMirror")?.active) {
+			var useCodeMirror = game.settings.get("jce", "CodeMirror");
+			if (useCodeMirror === true) {
+				editor = document.getElementsByClassName("CodeMirror")[0].CodeMirror;
+			} else {}
+		} else {
+			editor = ace.edit(document.getElementById("editor"));
+		};
 		var output = editor.getValue();
 		var data = {
 			_id: this.sourceId,
@@ -46,7 +57,7 @@ class jce extends FormApplication {
 };
 
 // Add context menu option for opening the jce editor
-Hooks.on('getJournalDirectoryEntryContext', (html, contextEntries) => {
+Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
 	contextEntries.push({
 		name: game.i18n.localize("jce.ContextMenu"),
 		icon: `<i class="fas fa-code"></i>`,
@@ -64,38 +75,58 @@ Hooks.on('getJournalDirectoryEntryContext', (html, contextEntries) => {
 
 Hooks.on("renderjce", app => {
 
-	// initialise ace editor
-	var editor = ace.edit(document.getElementById("editor"));
-	
-	// populate with journal entry source code
-	editor.setValue(app.sourceContent);
-	
-	// set ace options
-	editor.setOptions(jceConfig.userSettings);
+	var editor;
 
-	// show keyboard shortcuts
-	editor.commands.addCommand({
-        name: "showKeyboardShortcuts",
-        bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
-        exec: editor => {
-            ace.config.loadModule("ace/ext/keybinding_menu", module => {
-                module.init(editor);
-                editor.showKeyboardShortcuts()
-            })
-        }
-    });
+	// Check if user wants to use CodeMirror or Ace
+	if (game.modules.get("_CodeMirror")?.active) {
+		var useCodeMirror = game.settings.get("jce", "CodeMirror");
+		if (useCodeMirror === true) {
 
-	// suppress DOCTYPE warning
-	var session = editor.getSession();
-	session.on("changeAnnotation", () => {
-		var annotations = session.getAnnotations()||[], i = len = annotations.length;
-		while (i--) {
-			if(/doctype first\. Expected/.test(annotations[i].text)) {
-				annotations.splice(i, 1);
+			// Initialise Code Mirror
+			var ce = document.getElementById("editor");
+			var editor = CodeMirror(node => ce.parentNode.replaceChild(node, ce), {
+				value: app.sourceContent, 
+				mode: "html",
+				...CodeMirror.userSettings,
+				lineNumbers: true,
+				inputStyle: "contenteditable",
+				autofocus: true
+			});
+		} else {}
+	} else {
+		// initialise ace editor
+		editor = ace.edit(document.getElementById("editor"));
+		
+		// set ace options
+		editor.setOptions(jceConfig.userSettings);
+
+		// populate with journal entry source code
+		editor.setValue(app.sourceContent);
+
+		// show keyboard shortcuts
+		editor.commands.addCommand({
+			name: "showKeyboardShortcuts",
+			bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
+			exec: editor => {
+				ace.config.loadModule("ace/ext/keybinding_menu", module => {
+					module.init(editor);
+					editor.showKeyboardShortcuts()
+				})
+			}
+		});
+
+		// suppress DOCTYPE warning
+		var session = editor.getSession();
+		session.on("changeAnnotation", () => {
+			var annotations = session.getAnnotations()||[], i = len = annotations.length;
+			while (i--) {
+				if(/doctype first\. Expected/.test(annotations[i].text)) {
+					annotations.splice(i, 1);
+				};
 			};
- 		};
-		if (len>annotations.length) {
-			session.setAnnotations(annotations);
-		};
-	});
+			if (len>annotations.length) {
+				session.setAnnotations(annotations);
+			};
+		});
+	};
 });

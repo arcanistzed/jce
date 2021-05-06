@@ -46,6 +46,10 @@ Hooks.once("init", function () {
 		)}
 	});
 
+	// If user has activated CodeMirror, add the option to use it instead
+	if (game.modules.get("_CodeMirror")?.active) {
+		register("CodeMirror", Boolean, undefined, false, false);
+	}
 
 	register("AutoOpen", Boolean, undefined, false, false);
 
@@ -54,7 +58,7 @@ Hooks.once("init", function () {
 	register("highlightSelectedWord", Boolean, undefined, true, true);
 	register("readOnly", Boolean, undefined, false, true);
 	register("cursorStyle", String, { "ace": "ace", "slim": "slim", "smooth": "smooth", "wide": "wide" }, "smooth", true);
-	register("mergeUndoDeltas", String, undefined, "always", false);
+	register("mergeUndoDeltas", String, undefined, "always", true);
 	register("behavioursEnabled", Boolean, undefined, true, true);
 	register("wrapBehavioursEnabled", Boolean, undefined, true, true);
 	register("autoScrollEditorIntoView", Boolean, undefined, undefined, true);
@@ -97,15 +101,10 @@ Hooks.once("init", function () {
 	register("scrollSpeed", Number, undefined, 2, true);
 	register("dragDelay", Number, undefined, 0, true);
 	register("dragEnabled", Boolean, undefined, true, true);
-	register("focusTimout", Number, undefined, 0, true);
+	register("focusTimeout", Number, undefined, 0, true);
 	register("tooltipFollowsMouse", Boolean, undefined, true, true);
 	register("firstLineNumber", Number, undefined, 1, true);
 	register("overwrite", Boolean, undefined, false, true);
 	register("useSoftTabs", Boolean, undefined, true, true);
 	register("indentedSoftWrap", Boolean, undefined, true, true);
-
-	console.log("jceConfig SETTINGS HERE!!!");
-	console.table(settings);
-	console.table(jceConfig);
-	console.log(settings, jceConfig);
 });
