@@ -1,7 +1,7 @@
 # JCE
 ![](https://img.shields.io/github/v/tag/arcanistzed/jce)
 
-Journal Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using Ace editor.
+Journal Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using Ace editor or Code Mirror.
 
 # Installation
 In the setup screen, use the URL https://raw.githubusercontent.com/arcanistzed/jce/main/module.json to install the module.
