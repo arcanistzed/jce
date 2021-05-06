@@ -1,11 +1,11 @@
 {
-	"SACE":{
-		"ContextMenu":"Ouvrir avec le sace",
-		"Title":"Simple Application Consacré à l'Édition",
+	"jce":{
+		"ContextMenu":"Ouvrir avec ecj",
+		"Title":"l'Édition du Code des Journals",
 		"settings":{
 			"AutoOpen":{
 				"Name":"Automatiquement ouvrir l'éditeur",
-				"Hint":"Lorsque c'est activé, l'éditeur sace s'ouvre automatiquement à chaque fois que vous ouvrez une entrée de journal."
+				"Hint":"Lorsque c'est activé, l'éditeur ecj s'ouvre automatiquement à chaque fois que vous ouvrez une entrée de journal."
 			},
 			"selectionStyle":{
 				"Name":"Selection Style",

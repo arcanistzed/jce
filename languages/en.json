@@ -1,11 +1,11 @@
 {
-	"SACE":{
-		"ContextMenu":"Open with sace",
-		"Title":"Simple Ace Code Editor",
+	"jce":{
+		"ContextMenu":"Open with jce",
+		"Title":"Journal Code Editor",
 		"settings":{
 			"AutoOpen":{
 				"Name":"Auto-Open Editor",
-				"Hint":"When enabled, the sace editor will open each time you open a journal entry."
+				"Hint":"When enabled, the jce editor will open each time you open a journal entry."
 			},
 			"selectionStyle":{
 				"Name":"Selection Style",

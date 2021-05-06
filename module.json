@@ -1,10 +1,10 @@
 {
-    "name": "sace",
-    "title": "Simple Ace Code Editor",
-    "description": "Simple Ace Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor.",
+    "name": "jce",
+    "title": "Journal Code Editor",
+    "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor.",
     "version": "0.1.2",
     "minimumCoreVersion": "0.7.9",
-    "compatibleCoreVersion": "0.7.9",
+    "compatibleCoreVersion": "0.8.2",
     "scripts": [
         "scripts/module.js",
         "scripts/settings.js",
@@ -51,6 +51,5 @@
     "license": "https://github.com/arcanistzed/sace/blob/main/LICENSE",
     "readme": "https://github.com/arcanistzed/sace/blob/main/README.md",
     "bugs": "https://github.com/arcanistzed/sace/issues",
-    "changelog": "https://github.com/arcanistzed/sace/blob/main/README.md",
-    "coreVersion": "0.7.9"
+    "changelog": "https://github.com/arcanistzed/sace/blob/main/README.md"
   }

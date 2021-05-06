@@ -1,18 +1,18 @@
 var sourceContent;
 
-// If the user has enabled it, when a journal sheet is opened, render the sace editor
+// If the user has enabled it, when a journal sheet is opened, render the jce editor
 Hooks.on("renderJournalSheet", app => {
-	var AutoOpen = game.settings.get("sace", "AutoOpen");
+	var AutoOpen = game.settings.get("jce", "AutoOpen");
 	if (AutoOpen === true) {
 		var sourceContent = app.object.data.content.trim();
 		var sourceTitle = app.object.data.name;
 		var sourceId = app.object.data._id;
-		new sace(sourceTitle, sourceContent, sourceId).render(true);
+		new jce(sourceTitle, sourceContent, sourceId).render(true);
 	};
 });
 
-// create sace editor Form Application
-class sace extends FormApplication {
+// create jce editor Form Application
+class jce extends FormApplication {
 	constructor(sourceTitle, sourceContent, sourceId) {
 		super();
 		this.sourceTitle = sourceTitle;
@@ -27,8 +27,8 @@ class sace extends FormApplication {
 		classes: ['form'],
 		popOut: true,
 		resizable: true,
-		template: `modules/sace/templates/saceEditor.html`,
-		id: 'simple-ace-code-editor',
+		template: `modules/jce/templates/jceEditor.html`,
+		id: 'journal-code-editor',
 		width: window.innerWidth * 3/4
 	  });
 	};
@@ -45,10 +45,10 @@ class sace extends FormApplication {
 	};
 };
 
-// Add context menu option for opening the sace editor
+// Add context menu option for opening the jce editor
 Hooks.on('getJournalDirectoryEntryContext', (html, contextEntries) => {
 	contextEntries.push({
-		name: game.i18n.localize("SACE.ContextMenu"),
+		name: game.i18n.localize("jce.ContextMenu"),
 		icon: `<i class="fas fa-code"></i>`,
 		condition: {},
 		callback: data => {
@@ -57,12 +57,12 @@ Hooks.on('getJournalDirectoryEntryContext', (html, contextEntries) => {
 			if (sourceJournal.data.content != null) {var sourceContent = sourceJournal.data.content.trim()}; // only trim content if content exists
 			var sourceTitle = sourceJournal.data.name;
 			
-			new sace(sourceTitle, sourceContent, sourceId).render(true); // render sace editor
+			new jce(sourceTitle, sourceContent, sourceId).render(true); // render jce editor
 		}
 	})
 });
 
-Hooks.on("rendersace", app => {
+Hooks.on("renderjce", app => {
 
 	// initialise ace editor
 	var editor = ace.edit(document.getElementById("editor"));
@@ -71,7 +71,7 @@ Hooks.on("rendersace", app => {
 	editor.setValue(app.sourceContent);
 	
 	// set ace options
-	editor.setOptions(game.settings.get("sace", "AceConfig"));
+	editor.setOptions(jceConfig.userSettings);
 
 	// show keyboard shortcuts
 	editor.commands.addCommand({
