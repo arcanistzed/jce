@@ -23,29 +23,30 @@ class jce extends FormApplication {
 
 	// configure Form Application options
 	static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
-		classes: ['form'],
-		popOut: true,
-		resizable: true,
-		template: `modules/jce/templates/jceEditor.html`,
-		id: 'journal-code-editor',
-		width: window.innerWidth * 3/4
-	  });
+		return mergeObject(super.defaultOptions, {
+			classes: ['form'],
+			popOut: true,
+			resizable: true,
+			template: `modules/jce/templates/jceEditor.html`,
+			id: 'journal-code-editor',
+			width: window.innerWidth * 3 / 4
+		});
 	};
 
 	// when saved, update journal entry with new data
 	async _updateObject() {
-		
+
 		var editor;
+		var useCodeMirror;
 
 		// Check if user is using CodeMirror or Ace
 		if (game.modules.get("_CodeMirror")?.active) {
-			var useCodeMirror = game.settings.get("jce", "CodeMirror");
-			if (useCodeMirror === true) {
-				editor = document.getElementsByClassName("CodeMirror")[0].CodeMirror;
-			} else {}
+			useCodeMirror = game.settings.get("jce", "CodeMirror");
+		};
+		if (useCodeMirror === true) {
+			editor = document.getElementsByClassName("CodeMirror")[0].CodeMirror;
 		} else {
-			editor = ace.edit(document.getElementById("editor"));
+			editor = ace.edit(document.getElementById("jce-editor"));
 		};
 		var output = editor.getValue();
 		var data = {
@@ -65,9 +66,9 @@ Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
 		callback: data => {
 			var sourceId = data[0].dataset.entityId;
 			var sourceJournal = game.journal.get(sourceId);
-			if (sourceJournal.data.content != null) {var sourceContent = sourceJournal.data.content.trim()}; // only trim content if content exists
+			if (sourceJournal.data.content != null) { var sourceContent = sourceJournal.data.content.trim() }; // only trim content if content exists
 			var sourceTitle = sourceJournal.data.name;
-			
+
 			new jce(sourceTitle, sourceContent, sourceId).render(true); // render jce editor
 		}
 	})
@@ -76,27 +77,29 @@ Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
 Hooks.on("renderjce", app => {
 
 	var editor;
+	var useCodeMirror;
 
 	// Check if user wants to use CodeMirror or Ace
 	if (game.modules.get("_CodeMirror")?.active) {
-		var useCodeMirror = game.settings.get("jce", "CodeMirror");
-		if (useCodeMirror === true) {
+		useCodeMirror = game.settings.get("jce", "CodeMirror");
+	};
+	if (useCodeMirror === true) {
 
-			// Initialise Code Mirror
-			var ce = document.getElementById("editor");
-			var editor = CodeMirror(node => ce.parentNode.replaceChild(node, ce), {
-				value: app.sourceContent, 
-				mode: "html",
-				...CodeMirror.userSettings,
-				lineNumbers: true,
-				inputStyle: "contenteditable",
-				autofocus: true
-			});
-		} else {}
+		// Initialise Code Mirror
+		var ce = document.getElementById("jce-editor");
+		var editor = CodeMirror(node => ce.parentNode.replaceChild(node, ce), {
+			value: app.sourceContent,
+			mode: "html",
+			...CodeMirror.userSettings,
+			lineNumbers: true,
+			inputStyle: "contenteditable",
+			autofocus: true
+		});
+		editor.setSize(null, app.position.height);
 	} else {
 		// initialise ace editor
-		editor = ace.edit(document.getElementById("editor"));
-		
+		editor = ace.edit(document.getElementById("jce-editor"));
+
 		// set ace options
 		editor.setOptions(jceConfig.userSettings);
 
@@ -106,7 +109,7 @@ Hooks.on("renderjce", app => {
 		// show keyboard shortcuts
 		editor.commands.addCommand({
 			name: "showKeyboardShortcuts",
-			bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
+			bindKey: { win: "Ctrl-Alt-h", mac: "Command-Alt-h" },
 			exec: editor => {
 				ace.config.loadModule("ace/ext/keybinding_menu", module => {
 					module.init(editor);
@@ -118,13 +121,13 @@ Hooks.on("renderjce", app => {
 		// suppress DOCTYPE warning
 		var session = editor.getSession();
 		session.on("changeAnnotation", () => {
-			var annotations = session.getAnnotations()||[], i = len = annotations.length;
+			var annotations = session.getAnnotations() || [], i = len = annotations.length;
 			while (i--) {
-				if(/doctype first\. Expected/.test(annotations[i].text)) {
+				if (/doctype first\. Expected/.test(annotations[i].text)) {
 					annotations.splice(i, 1);
 				};
 			};
-			if (len>annotations.length) {
+			if (len > annotations.length) {
 				session.setAnnotations(annotations);
 			};
 		});
