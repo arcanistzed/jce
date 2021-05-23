@@ -1,55 +1,50 @@
 {
-    "name": "jce",
-    "title": "Journal Code Editor",
-    "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor or Code Mirror.",
-    "version": "0.1.3",
-    "minimumCoreVersion": "0.7.9",
-    "compatibleCoreVersion": "0.8.2",
-    "scripts": [
-        "scripts/module.js",
-        "scripts/settings.js",
-        "scripts/lib/ace.js",
-        "scripts/lib/ext-language_tools.js",
-        "scripts/lib/ext-elastic_tabstops_lite.js"
-    ],
-    "dependencies": [],
-    "esmodules": [],
-    "styles": [],
-    "manifestPlusVersion": "1.1.0",
-      "allowBugReporter": true,
-    "packs": [],
-    "languages": [
-      {
-        "lang": "en",
-        "name": "English",
-        "path": "languages/en.json"
-      },
-      {
-        "lang": "fr",
-        "name": "French",
-        "path": "languages/fr.json"
-      }
-    ],
-    "author": "arcanist",
-    "authors": [
-      {
-        "name": "arcanist",
-        "email": "arcanistzed@gmail.com",
-        "discord": "arcanist#4317"
-      }
-    ],
-    "keywords": [
-      "ace",
-      "code",
-      "html",
-      "journals"
-    ],
-    "socket": false,
-    "url": "https://github.com/arcanistzed/jce",
-    "manifest": "https://github.com/arcanistzed/jce/releases/latest/download/module.json",
-    "download": "https://github.com/arcanistzed/jce/releases/latest/download/module.zip",
-    "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
-    "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
-    "bugs": "https://github.com/arcanistzed/jce/issues",
-    "changelog": "https://github.com/arcanistzed/jce/blob/main/README.md"
-  }
+  "name": "jce",
+  "title": "Journal Code Editor",
+  "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor or Code Mirror.",
+  "version": "0.1.4",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.8.5",
+  "scripts": [
+    "scripts/module.js",
+    "scripts/settings.js",
+    "scripts/lib/ace.js",
+    "scripts/lib/ext-language_tools.js",
+    "scripts/lib/ext-elastic_tabstops_lite.js"
+  ],
+  "styles": [
+    "styles/module.css"
+  ],
+  "manifestPlusVersion": "1.1.0",
+  "allowBugReporter": true,
+  "languages": [{
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "languages/fr.json"
+    }
+  ],
+  "author": "arcanist",
+  "authors": [{
+    "name": "arcanist",
+    "email": "arcanistzed@gmail.com",
+    "discord": "arcanist#4317"
+  }],
+  "keywords": [
+    "ace",
+    "code",
+    "html",
+    "journals"
+  ],
+  "url": "https://github.com/arcanistzed/jce",
+  "manifest": "https://github.com/arcanistzed/jce/releases/latest/download/module.json",
+  "download": "https://github.com/arcanistzed/jce/releases/latest/download/module.zip",
+  "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
+  "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
+  "bugs": "https://github.com/arcanistzed/jce/issues",
+  "changelog": "https://github.com/arcanistzed/jce/blob/main/README.md"
+}
