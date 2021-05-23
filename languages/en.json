@@ -1,223 +1,167 @@
 {
-	"jce":{
-		"ContextMenu":"Open with jce",
-		"Title":"Journal Code Editor",
-		"settings":{
-			"AutoOpen":{
-				"Name":"Auto-Open Editor",
-				"Hint":"When enabled, the jce editor will open each time you open a journal entry."
+	"jce": {
+		"ContextMenu": "Open with jce",
+		"Title": "Journal Code Editor",
+		"settings": {
+			"AutoOpen": {
+				"Name": "Auto-Open Editor",
+				"Hint": "When enabled, the jce editor will open each time you open a journal entry."
 			},
 			"CodeMirror": {
 				"Name": "Use Code Mirror",
 				"Hint": "Replaces the Ace editor with Code Mirror"
 			},
-			"selectionStyle":{
-				"Name":"Selection Style",
-				"Hint":"        "
+			"selectionStyle": {
+				"Name": "Selection Style",
+				"Hint": "        "
 			},
-			"highlightActiveLine":{
-				"Name":"Highlight Active Line",
-				"Hint":"        "
+			"highlightActiveLine": {
+				"Name": "Highlight Active Line",
+				"Hint": "        "
 			},
-			"highlightSelectedWord":{
-				"Name":"Highlight Selected Word",
-				"Hint":"        "
+			"highlightSelectedWord": {
+				"Name": "Highlight Selected Word",
+				"Hint": "        "
 			},
-			"readOnly":{
-				"Name":"Read Only",
-				"Hint":"        "
+			"cursorStyle": {
+				"Name": "Cursor Style",
+				"Hint": "        "
 			},
-			"cursorStyle":{
-				"Name":"Cursor Style",
-				"Hint":"        "
+			"showInvisibles": {
+				"Name": "Show Invisibles",
+				"Hint": "Show tabs and spaces"
 			},
-			"mergeUndoDeltas":{
-				"Name":"Merge Undo Deltas",
-				"Hint":"        "
+			"displayIndentGuides": {
+				"Name": "Display Indent Guides",
+				"Hint": "Shows indents. Enabling this will enable Show Invisibles."
 			},
-			"behavioursEnabled":{
-				"Name":"Behaviours Enabled",
-				"Hint":"        "
+			"navigateWithinSoftTabs": {
+				"Name": "Navigate Within Soft Tabs",
+				"Hint": "        "
 			},
-			"wrapBehavioursEnabled":{
-				"Name":"Wrap Behaviours Enabled",
-				"Hint":"        "
+			"enableMultiselect": {
+				"Name": "Enable Multiselect",
+				"Hint": ""
 			},
-			"autoScrollEditorIntoView":{
-				"Name":"Auto Scroll Editor Into View",
-				"Hint":"        "
+			"highlightGutterLine": {
+				"Name": "Highlight Gutter Line",
+				"Hint": "Whether or not you want to highlight the current line in the Gutter"
 			},
-			"displayIndentGuides":{
-				"Name":"Display Indent Guides",
-				"Hint":"        "
+			"showPrintMargin": {
+				"Name": "Show Print Margin",
+				"Hint": "Do you want a print margin?"
 			},
-			"navigateWithinSoftTabs":{
-				"Name":"Navigate Within Soft Tabs",
-				"Hint":"        "
+			"printMarginColumn": {
+				"Name": "Print Margin Column",
+				"Hint": "How many columns of text should be included in the print margin?"
 			},
-			"enableMultiselect":{
-				"Name":"Enable Multiselect",
-				"Hint":"        "
+			"showFoldWidgets": {
+				"Name": "Show Fold Widgets",
+				"Hint": "These little triangular widgets in the gutter let you fold elements"
 			},
-			"highlightGutterLine":{
-				"Name":"Highlight Gutter Line",
-				"Hint":"        "
+			"fadeFoldWidgets": {
+				"Name": "Fade Fold Widgets",
+				"Hint": "Should the widgets disappear when you don't have your mouse over the Gutter?"
 			},
-			"animatedScroll":{
-				"Name":"Animated Scroll",
-				"Hint":"        "
+			"showLineNumbers": {
+				"Name": "Show Line Numbers",
+				"Hint": "        "
 			},
-			"showInvisibles":{
-				"Name":"Show Invisibles",
-				"Hint":"        "
+			"showGutter": {
+				"Name": "Show Gutter",
+				"Hint": "This is the sidebar on the left side of the editor that usually has the line numbers in it"
 			},
-			"showPrintMargin":{
-				"Name":"Show Print Margin",
-				"Hint":"        "
+			"fontSize": {
+				"Name": "Font Size",
+				"Hint": "        "
 			},
-			"printMarginColumn":{
-				"Name":"Print Margin Column",
-				"Hint":"        "
+			"fontFamily": {
+				"Name": "Font Family",
+				"Hint": "        "
 			},
-			"printMargin":{
-				"Name":"Print Margin",
-				"Hint":"        "
+			"scrollPastEnd": {
+				"Name": "Scroll Past End",
+				"Hint": "        "
 			},
-			"fadeFoldWidgets":{
-				"Name":"Fade Fold Widgets",
-				"Hint":"        "
+			"theme": {
+				"Name": "Theme",
+				"Hint": "Favorite color?"
 			},
-			"showFoldWidgets":{
-				"Name":"Show Fold Widgets",
-				"Hint":"        "
+			"newLineMode": {
+				"Name": "New Line Mode",
+				"Hint": ""
 			},
-			"showLineNumbers":{
-				"Name":"Show Line Numbers",
-				"Hint":"        "
+			"tabSize": {
+				"Name": "Tab Size",
+				"Hint": ""
 			},
-			"showGutter":{
-				"Name":"Show Gutter",
-				"Hint":"        "
+			"wrap": {
+				"Name": "Wrap Text",
+				"Hint": ""
 			},
-			"fontSize":{
-				"Name":"Font Size",
-				"Hint":"        "
+			"foldStyle": {
+				"Name": "Fold Style",
+				"Hint": "        "
 			},
-			"fontFamily":{
-				"Name":"Font Family",
-				"Hint":"        "
+			"mode": {
+				"Name": "Mode",
+				"Hint": "What are you editing?"
 			},
-			"scrollPastEnd":{
-				"Name":"Scroll Past End",
-				"Hint":"        "
+			"enableBasicAutocompletion": {
+				"Name": "Enable Basic Autocompletion",
+				"Hint": ""
 			},
-			"fixedWidthGutter":{
-				"Name":"Fixed Width Gutter",
-				"Hint":"        "
+			"enableSnippets": {
+				"Name": "Enable Snippets",
+				"Hint": ""
 			},
-			"theme":{
-				"Name":"Theme",
-				"Hint":"        "
+			"enableLiveAutocompletion": {
+				"Name": "Enable Live Autocompletion",
+				"Hint": ""
 			},
-			"newLineMode":{
-				"Name":"New Line Mode",
-				"Hint":"        "
+			"useElasticTabstops": {
+				"Name": "Use Elastic Tabstops",
+				"Hint": "        "
 			},
-			"useWorker":{
-				"Name":"Use Worker",
-				"Hint":"        "
+			"KeyboardHandler": {
+				"Name": "Keyboard Handler",
+				"Hint": "Choose a set of keybindings"
 			},
-			"tabSize":{
-				"Name":"Tab Size",
-				"Hint":"        "
+			"hScrollBarAlwaysVisible": {
+				"Name": "Horizontal Scroll Bar Always Visible",
+				"Hint": ""
 			},
-			"wrap":{
-				"Name":"Wrap",
-				"Hint":"        "
+			"vScrollBarAlwaysVisible": {
+				"Name": "Vertical Scroll Bar Always Visible",
+				"Hint": ""
 			},
-			"foldStyle":{
-				"Name":"Fold Style",
-				"Hint":"        "
+			"scrollSpeed": {
+				"Name": "Scroll Speed",
+				"Hint": ""
 			},
-			"mode":{
-				"Name":"Mode",
-				"Hint":"        "
+			"dragDelay": {
+				"Name": "Drag-and-drop Delay",
+				"Hint": ""
 			},
-			"enableBasicAutocompletion":{
-				"Name":"Enable Basic Autocompletion",
-				"Hint":"        "
+			"dragEnabled": {
+				"Name": "Enable Drag-and-drop",
+				"Hint": ""
 			},
-			"enableSnippets":{
-				"Name":"Enable Snippets",
-				"Hint":"        "
+			"firstLineNumber": {
+				"Name": "First Line Number",
+				"Hint": ""
 			},
-			"enableLiveAutocompletion":{
-				"Name":"Enable Live Autocompletion",
-				"Hint":"        "
+			"overwrite": {
+				"Name": "Overwrite",
+				"Hint": "Overwrite text instead of inputting normally."
 			},
-			"useElasticTabstops":{
-				"Name":"Use Elastic Tabstops",
-				"Hint":"        "
+			"useSoftTabs": {
+				"Name": "Use Soft Tabs",
+				"Hint": "        "
 			},
-			"KeyboardHandler":{
-				"Name":"Keyboard Handler",
-				"Hint":"        "
-			},
-			"hScrollBarAlwaysVisible":{
-				"Name":"Horizontal Scroll Bar Always Visible",
-				"Hint":"        "
-			},
-			"vScrollBarAlwaysVisible":{
-				"Name":"Vertical Scroll Bar Always Visible",
-				"Hint":"        "
-			},
-			"maxLines":{
-				"Name":"Max Number of Lines",
-				"Hint":"        "
-			},
-			"minLines":{
-				"Name":"Min Number of Lines",
-				"Hint":"        "
-			},
-			"maxPixelHeight":{
-				"Name":"Max Pixel Height",
-				"Hint":"        "
-			},
-			"scrollSpeed":{
-				"Name":"Scroll Speed",
-				"Hint":"        "
-			},
-			"dragDelay":{
-				"Name":"Drag-and-drop Delay ",
-				"Hint":"        "
-			},
-			"dragEnabled":{
-				"Name":"Enable Drag-and-drop",
-				"Hint":"        "
-			},
-			"focusTimeout":{
-				"Name":"Focus Timeout",
-				"Hint":"        "
-			},
-			"tooltipFollowsMouse":{
-				"Name":"Tooltip Follows Mouse",
-				"Hint":"        "
-			},
-			"firstLineNumber":{
-				"Name":"First Line Number",
-				"Hint":"        "
-			},
-			"overwrite":{
-				"Name":"Overwrite",
-				"Hint":"        "
-			},
-			"useSoftTabs":{
-				"Name":"Use Soft Tabs",
-				"Hint":"        "
-			},
-			"indentedSoftWrap":{
-				"Name":"Indented Soft Wrap",
-				"Hint":"        "
+			"indentedSoftWrap": {
+				"Name": "Indented Soft Wrap",
+				"Hint": "        "
 			}
 		}
 	}
