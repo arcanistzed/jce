@@ -7,17 +7,15 @@
   "compatibleCoreVersion": "0.8.5",
   "scripts": [
     "scripts/module.js",
-    "scripts/settings.js",
-    "scripts/lib/ace.js",
-    "scripts/lib/ext-language_tools.js",
-    "scripts/lib/ext-elastic_tabstops_lite.js"
+    "scripts/settings.js"
   ],
   "styles": [
     "styles/module.css"
   ],
   "manifestPlusVersion": "1.1.0",
   "allowBugReporter": true,
-  "languages": [{
+  "languages": [
+    {
       "lang": "en",
       "name": "English",
       "path": "languages/en.json"
@@ -29,16 +27,25 @@
     }
   ],
   "author": "arcanist",
-  "authors": [{
-    "name": "arcanist",
-    "email": "arcanistzed@gmail.com",
-    "discord": "arcanist#4317"
-  }],
+  "authors": [
+    {
+      "name": "arcanist",
+      "email": "arcanistzed@gmail.com",
+      "discord": "arcanist#4317"
+    }
+  ],
   "keywords": [
     "ace",
     "code",
     "html",
     "journals"
+  ],
+  "dependencies": [
+    {
+      "name": "acelib",
+      "manifest": "https://github.com/arcanistzed/acelib/releases/latest/download/module.json",
+      "type": "module"
+    }
   ],
   "url": "https://github.com/arcanistzed/jce",
   "manifest": "https://github.com/arcanistzed/jce/releases/latest/download/module.json",

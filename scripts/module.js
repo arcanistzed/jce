@@ -101,7 +101,7 @@ Hooks.on("renderjce", app => {
 		editor = ace.edit(document.getElementById("jce-editor"));
 
 		// set ace options
-		editor.setOptions(jceConfig.userSettings);
+		editor.setOptions(game.modules.get("acelib").aceConfig.userSettings);
 
 		// populate with journal entry source code
 		editor.setValue(app.sourceContent);
