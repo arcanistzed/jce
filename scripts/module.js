@@ -29,7 +29,8 @@ class jce extends FormApplication {
 			resizable: true,
 			template: `modules/jce/templates/jceEditor.html`,
 			id: 'journal-code-editor',
-			width: window.innerWidth * 3 / 4
+			width: window.innerWidth * 3 / 4,
+			height: window.innerHeight * 3 / 4
 		});
 	};
 
@@ -95,13 +96,13 @@ Hooks.on("renderjce", app => {
 			inputStyle: "contenteditable",
 			autofocus: true
 		});
-		editor.setSize(null, app.position.height);
+		editor.setSize(null, '100%');
 	} else {
 		// initialise ace editor
 		editor = ace.edit(document.getElementById("jce-editor"));
 
 		// set ace options
-		editor.setOptions(game.modules.get("acelib").aceConfig.userSettings);
+		editor.setOptions(ace.userSettings);
 
 		// populate with journal entry source code
 		editor.setValue(app.sourceContent);
