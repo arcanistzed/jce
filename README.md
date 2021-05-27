@@ -16,14 +16,11 @@ Press Ctrl+Alt+h or Cmd+Alt+h to view a list of all the keyboard shortcuts avail
 ## Using Code Mirror
 Install the [Code Mirror](https://github.com/League-of-Foundry-Developers/codemirror-lib) and enable it, then enable the setting in the JCE module settings.
 
-# Contributing
-Contributions are welcome via pull request.
-
 # License
-JCE is under an [MIT license](LICENSE) while Ace is under a [BSD license](https://github.com/ajaxorg/ace/blob/master/LICENSE).
+This package is under an [MIT license](LICENSE)
 
 # Bugs
-You can submit bugs via the [Bug Reporter module](https://foundryvtt.com/packages/bug-reporter) or via [Github Issues](https://github.com/arcanistzed/jce/issues/new/choose).
+You can submit bugs via [Github Issues](https://github.com/arcanistzed/jce/issues/new/choose).
 
 # Contact me
-The best way to reach me is sending me a message on discord (arcanist#4317).
+I can be reached on discord [@arcanist#4317](https://discord.com/users/455117777745870860) or by [email](mailto:arcanistzed@gmail.com?subject=Volume Control module for Foundry VTT).
