@@ -45,9 +45,9 @@
       "type": "module"
     }
   ],
-  "url": "https://github.com/arcanistzed/jce",
-  "manifest": "https://github.com/arcanistzed/jce/releases/latest/download/module.json",
-  "download": "https://github.com/arcanistzed/jce/releases/latest/download/module.zip",
+  "url": "This is auto replaced",
+  "manifest": "This is auto replaced",
+  "download": "This is auto replaced",
   "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
   "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
   "bugs": "https://github.com/arcanistzed/jce/issues",
