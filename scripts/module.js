@@ -104,6 +104,9 @@ Hooks.on("renderjce", app => {
 		// set ace options
 		editor.setOptions(ace.userSettings);
 
+		// set to html mode
+		editor.session.setMode("ace/mode/html");
+
 		// populate with journal entry source code
 		editor.setValue(app.sourceContent);
 
