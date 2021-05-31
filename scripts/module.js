@@ -18,7 +18,7 @@ class jce extends FormApplication {
 		this.sourceTitle = sourceTitle;
 		this.sourceContent = sourceContent;
 		this.sourceId = sourceId;
-		this.options.title = `${game.i18n.localize("Simple Ace Code Editor")}: ${this.sourceTitle}`;
+		this.options.title = `${game.i18n.localize("jce.Title")}: ${this.sourceTitle}`;
 	};
 
 	// configure Form Application options
