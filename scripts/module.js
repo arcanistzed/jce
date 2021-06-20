@@ -54,7 +54,7 @@ class jce extends FormApplication {
 			_id: this.sourceId,
 			content: output
 		};
-		JournalEntry.updateDocuments([data]);
+		JournalEntry.update([data]);
 	};
 };
 
