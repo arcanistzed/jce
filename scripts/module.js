@@ -3,7 +3,7 @@ var sourceContent;
 // If the user has enabled it, when a journal sheet is opened, render the jce editor
 Hooks.on("renderJournalSheet", app => {
 	var AutoOpen = game.settings.get("jce", "AutoOpen");
-	if (AutoOpen === true) {
+	if (AutoOpen === true && game.user.isGM) {
 		var sourceContent = app.object.data.content.trim();
 		var sourceTitle = app.object.data.name;
 		var sourceId = app.object.data._id;
@@ -60,19 +60,21 @@ class jce extends FormApplication {
 
 // Add context menu option for opening the jce editor
 Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
-	contextEntries.push({
-		name: game.i18n.localize("jce.ContextMenu"),
-		icon: `<i class="fas fa-code"></i>`,
-		condition: {},
-		callback: data => {
-			var sourceId = data[0].dataset.entityId;
-			var sourceJournal = game.journal.get(sourceId);
-			if (sourceJournal.data.content != null) { var sourceContent = sourceJournal.data.content.trim() }; // only trim content if content exists
-			var sourceTitle = sourceJournal.data.name;
+	if (game.user.isGM) { // Only show for GMs
+		contextEntries.push({
+			name: game.i18n.localize("jce.ContextMenu"),
+			icon: `<i class="fas fa-code"></i>`,
+			condition: {},
+			callback: data => {
+				var sourceId = data[0].dataset.entityId;
+				var sourceJournal = game.journal.get(sourceId);
+				if (sourceJournal.data.content != null) { var sourceContent = sourceJournal.data.content.trim() }; // only trim content if content exists
+				var sourceTitle = sourceJournal.data.name;
 
-			new jce(sourceTitle, sourceContent, sourceId).render(true); // render jce editor
-		}
-	})
+				new jce(sourceTitle, sourceContent, sourceId).render(true); // render jce editor
+			}
+		});
+	};
 });
 
 Hooks.on("renderjce", app => {

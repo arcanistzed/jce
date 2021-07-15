@@ -1,11 +1,11 @@
 {
 	"jce": {
-		"ContextMenu": "Open with jce",
+		"ContextMenu": "Open with JCE",
 		"Title": "Journal Code Editor",
 		"settings": {
 			"AutoOpen": {
 				"Name": "Auto-Open Editor",
-				"Hint": "When enabled, the jce editor will open each time you open a journal entry."
+				"Hint": "When enabled, the journal code editor will open each time you open a journal entry."
 			},
 			"CodeMirror": {
 				"Name": "Use Code Mirror",
