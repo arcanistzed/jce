@@ -1,17 +1,6 @@
-var sourceContent;
+let sourceContent;
 
-// If the user has enabled it, when a journal sheet is opened, render the jce editor
-Hooks.on("renderJournalSheet", app => {
-	var AutoOpen = game.settings.get("jce", "AutoOpen");
-	if (AutoOpen === true && game.user.isGM) {
-		var sourceContent = app.object.data.content.trim();
-		var sourceTitle = app.object.data.name;
-		var sourceId = app.object.data._id;
-		new jce(sourceTitle, sourceContent, sourceId).render(true);
-	};
-});
-
-// create jce editor Form Application
+// Create jce editor Form Application
 class jce extends FormApplication {
 	constructor(sourceTitle, sourceContent, sourceId) {
 		super();
@@ -47,16 +36,37 @@ class jce extends FormApplication {
 		if (useCodeMirror === true) {
 			editor = document.getElementsByClassName("CodeMirror")[0].CodeMirror;
 		} else {
-			editor = ace.edit(document.getElementById("jce-editor"));
+			editor = ace.edit("jce-editor");
 		};
 		var output = editor.getValue();
 		var data = {
 			_id: this.sourceId,
 			content: output
 		};
-		JournalEntry.update([data]);
+
+		// Only update if changes have been made
+		if (this.sourceContent != output) JournalEntry.update([data]);
 	};
 };
+
+Hooks.on("renderJournalSheet", app => {
+	let AutoOpen = game.settings.get("jce", "AutoOpen");
+	let sourceContent = app.object.data.content.trim();
+	let sourceTitle = app.object.data.name;
+	let sourceId = app.object.data._id;
+
+	const open = () => {
+		new jce(sourceTitle, sourceContent, sourceId).render(true);
+	};
+
+	// If the user has enabled it, when a journal sheet is opened, open the JCE right away
+	if (AutoOpen === true && game.user.isGM) {
+		open();
+	};
+
+	// Open when they click on edit
+	document.querySelector(".editor-edit").onclick = open;
+});
 
 // Add context menu option for opening the jce editor
 Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
@@ -66,10 +76,10 @@ Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
 			icon: `<i class="fas fa-code"></i>`,
 			condition: {},
 			callback: data => {
-				var sourceId = data[0].dataset.entityId;
-				var sourceJournal = game.journal.get(sourceId);
+				let sourceId = data[0].dataset.entityId;
+				let sourceJournal = game.journal.get(sourceId);
 				if (sourceJournal.data.content != null) { var sourceContent = sourceJournal.data.content.trim() }; // only trim content if content exists
-				var sourceTitle = sourceJournal.data.name;
+				let sourceTitle = sourceJournal.data.name;
 
 				new jce(sourceTitle, sourceContent, sourceId).render(true); // render jce editor
 			}
@@ -99,9 +109,10 @@ Hooks.on("renderjce", app => {
 			autofocus: true
 		});
 		editor.setSize(null, '100%');
+
 	} else {
 		// initialise ace editor
-		editor = ace.edit(document.getElementById("jce-editor"));
+		editor = ace.edit("jce-editor");
 
 		// set ace options
 		editor.setOptions(ace.userSettings);
