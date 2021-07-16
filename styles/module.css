@@ -1,0 +1,21 @@
+.jce-grid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 2.3em;
+  grid-template-areas:
+    "editor"
+    "footer";
+  min-height: 18em;
+  row-gap: 0.5em;
+}
+
+#jce-editor, .CodeMirror {
+  position: relative;
+  border-radius: 3px;
+  grid-area: editor;
+}
+
+.jce-footer {
+  grid-area: footer;
+}
