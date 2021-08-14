@@ -1,4 +1,4 @@
-# CHANGELOG
+# Changelog
 
 ## 0.4.0 - 14 Jul 2021 - GM only
 

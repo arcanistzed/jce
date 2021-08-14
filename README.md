@@ -35,6 +35,6 @@ Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click
 
 ## TODO
 
-- Integrate directly into journal sheet
+- Use Sheet Registrar
 - Make editor agnostic
 - Add options for parsing Markdown, text, etc. to HTML
