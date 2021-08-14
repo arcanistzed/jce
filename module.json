@@ -4,7 +4,7 @@
   "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor or Code Mirror.",
   "version": "",
   "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.8.5",
+  "compatibleCoreVersion": "0.8.8",
   "scripts": [
     "scripts/module.js",
     "scripts/settings.js"
@@ -12,7 +12,7 @@
   "styles": [
     "styles/module.css"
   ],
-  "manifestPlusVersion": "1.1.0",
+  "manifestPlusVersion": "1.2.0",
   "languages": [
     {
       "lang": "en",
@@ -25,32 +25,46 @@
       "path": "languages/fr.json"
     }
   ],
+  "author": "arcanist",
   "authors": [
     {
       "name": "arcanist",
       "url": "https://arcanistzed.github.io/",
       "email": "arcanistzed@gmail.com",
-      "discord": "arcanist#4317"
+      "discord": "arcanist#4317",
+      "reddit": "u/arcanistzed"
     }
   ],
   "keywords": [
-    "ace",
+    "editor",
     "code",
     "html",
     "journals"
   ],
-  "dependencies": [
-    {
-      "name": "acelib",
-      "manifest": "https://github.com/arcanistzed/acelib/releases/latest/download/module.json",
-      "type": "module"
-    }
-  ],
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
-  "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
+  "readme": "https://raw.githubusercontent.com/arcanistzed/jce/blob/main/README.md",
+  "changelog": "https://raw.githubusercontent.com/arcanistzed/jce/main/CHANGELOG.md",
+  "license": "https://raw.githubusercontent.com/arcanistzed/jce/blob/main/LICENSE",
   "bugs": "https://github.com/arcanistzed/jce/issues",
-  "changelog": "https://github.com/arcanistzed/jce/blob/main/README.md"
+  "media": [
+    {
+      "type": "screenshot",
+      "url": "https://img.itch.zone/aW1hZ2UvMTA2NDIyNi82MDkyODA4LnBuZw==/250x600/%2FzwV4F.png",
+      "caption": "Editing some Journal Entry HTML"
+    },
+    {
+      "type": "cover",
+      "url": "https://img.itch.zone/aW1hZ2UvMTEyNDU0My82NTA4NDgxLmdpZg==/347x500/rngeuv.gif",
+      "caption": "Journal Code Editor"
+    },
+    {
+      "type": "video",
+      "url": "https://youtu.be/xl8ILMAIGhM",
+      "loop": true,
+      "thumbnail": "",
+      "caption": "Showcase of JCE"
+    }
+  ]
 }
