@@ -23,7 +23,9 @@ Install the [Code Mirror](https://github.com/League-of-Foundry-Developers/codemi
 
 ## License
 
-This package is under an [MIT license](LICENSE)
+Copyright © 2021 arcanist
+
+This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
 
 ## Bugs
 
