@@ -41,6 +41,13 @@
     "html",
     "journals"
   ],
+  "dependencies": [
+    {
+      "name": "_document-sheet-registrar",
+      "type": "module",
+      "manifest": "https://raw.githubusercontent.com/League-of-Foundry-Developers/document-sheet-registrar/main/module.json"
+    }
+  ],
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",

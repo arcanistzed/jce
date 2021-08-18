@@ -1,23 +1,16 @@
-.jce-grid {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 100%;
-  grid-template-rows: 1fr 2.3em;
-  grid-template-areas:
-    "editor"
-    "footer";
-  min-height: 18em;
-  row-gap: 0.5em;
+.jce-sheet {
+  display: flex;
 }
 
-#jce-editor, .CodeMirror {
+#jce-editor {
   position: relative;
   border-radius: 3px;
-  grid-area: editor;
-  width: 100%;
+  flex: unset;
   height: 100%;
+  width: 100%;
 }
 
-.jce-footer {
-  grid-area: footer;
+#jce-sheet-header {
+  max-width: 25%;
+  min-height: 2em;
 }

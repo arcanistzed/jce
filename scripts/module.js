@@ -1,37 +1,54 @@
 let sourceContent;
 
-// Create jce editor Form Application
-class jce extends FormApplication {
-	constructor(sourceTitle, sourceContent, sourceId) {
-		super();
-		this.sourceTitle = sourceTitle;
-		this.sourceContent = sourceContent;
-		this.sourceId = sourceId;
-		this.options.title = `${game.i18n.localize("jce.Title")}: ${this.sourceTitle}`;
-	};
+// Create Jce editor Form Application
+class Jce extends JournalSheet {
+	/** The module's ID */
+	static ID = "jce";
 
-	// configure Form Application options
+	/** @override */
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			classes: ['form'],
-			popOut: true,
-			resizable: true,
-			template: `modules/jce/templates/jceEditor.html`,
+			classes: ["jce-sheet", "sheet"],
+			template: `modules/jce/templates/sheet.hbs`,
 			id: 'journal-code-editor',
 			width: window.innerWidth * 3 / 4,
 			height: window.innerHeight * 3 / 4
 		});
 	};
 
+	/** @override */
+	activateListeners(html) {
+		super.activateListeners(html);
+
+		// Everything below here is only needed if the sheet is editable
+		if (!this.options.editable) return;
+	};
+
+	/** @override */
+	get template() {
+		return "modules/jce/templates/sheet.hbs";
+	};
+
+	/** @override */
+	getData() {
+		// Retrieve the data structure from the base sheet
+		const context = super.getData();
+		console.log(context)
+
+		context.editors = ["acelib", "_CodeMirror"];
+
+		return context;
+	};
+
 	// when saved, update journal entry with new data
-	async _updateObject() {
+	/* async _updateObject() {
 
 		var editor;
 		var useCodeMirror;
 
 		// Check if user is using CodeMirror or Ace
 		if (game.modules.get("_CodeMirror")?.active) {
-			useCodeMirror = game.settings.get("jce", "CodeMirror");
+			useCodeMirror = game.settings.get(Jce.ID, "CodeMirror");
 		};
 		if (useCodeMirror === true) {
 			editor = document.getElementsByClassName("CodeMirror")[0].CodeMirror;
@@ -46,17 +63,16 @@ class jce extends FormApplication {
 
 		// Only update if changes have been made
 		if (this.sourceContent != output) JournalEntry.update([data]);
-	};
+	}; */
 };
 
-Hooks.on("renderJournalSheet", app => {
-	let AutoOpen = game.settings.get("jce", "AutoOpen");
+/* Hooks.on("renderJournalSheet", app => {
+	let AutoOpen = game.settings.get(Jce.ID, "AutoOpen");
 	let sourceContent = app.object.data.content.trim();
-	let sourceTitle = app.object.data.name;
 	let sourceId = app.object.data._id;
 
 	const open = () => {
-		new jce(sourceTitle, sourceContent, sourceId).render(true);
+		new Jce(sourceContent, sourceId).render(true);
 	};
 
 	// If the user has enabled it, when a journal sheet is opened, open the JCE right away
@@ -66,10 +82,10 @@ Hooks.on("renderJournalSheet", app => {
 
 	// Open when they click on edit
 	document.querySelector(".editor-edit").onclick = open;
-});
+}); */
 
 // Add context menu option for opening the jce editor
-Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
+/* Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
 	if (game.user.isGM) { // Only show for GMs
 		contextEntries.push({
 			name: game.i18n.localize("jce.ContextMenu"),
@@ -79,22 +95,21 @@ Hooks.on('getJournalDirectoryEntryContext', (_html, contextEntries) => {
 				let sourceId = data[0].dataset.entityId;
 				let sourceJournal = game.journal.get(sourceId);
 				if (sourceJournal.data.content != null) { var sourceContent = sourceJournal.data.content.trim() }; // only trim content if content exists
-				let sourceTitle = sourceJournal.data.name;
 
-				new jce(sourceTitle, sourceContent, sourceId).render(true); // render jce editor
+				new Jce(sourceContent, sourceId).render(true); // render jce editor
 			}
 		});
 	};
-});
+}); */
 
-Hooks.on("renderjce", app => {
+/* Hooks.on("renderJce", app => {
 
 	var editor;
 	var useCodeMirror;
 
 	// Check if user wants to use CodeMirror or Ace
 	if (game.modules.get("_CodeMirror")?.active) {
-		useCodeMirror = game.settings.get("jce", "CodeMirror");
+		useCodeMirror = game.settings.get(Jce.ID, "CodeMirror");
 	};
 	if (useCodeMirror === true) {
 
@@ -149,4 +164,17 @@ Hooks.on("renderjce", app => {
 			};
 		});
 	};
+}); */
+
+Hooks.on("preDocumentSheetRegistrarInit", (settings) => {
+	settings["JournalEntry"] = true;
+});
+
+Hooks.on("documentSheetRegistrarInit", (documentTypes) => {
+	console.log(documentTypes)
+	Journal.registerSheet?.(Jce.ID, Jce, {
+		types: ["base"],
+		makeDefault: true,
+		label: "Journal Code Editor"
+	});
 });
