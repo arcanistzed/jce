@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0
+
+Complete Refactor to use the [Sheet Registrar library](https://github.com/League-of-Foundry-Developers/document-sheet-registrar/)
+Edit Journal Entries in the same window, rather than in a seperate application
+Easily switch between any of the supported editor libraries ([Ace Editor](https://github.com/arcanistzed/acelib) and [CodeMirror](https://github.com/League-of-Foundry-Developers/codemirror-lib))
+Simply edit Journals with the default textarea, so that you don't need to install anything else
+Toggle between using JCE and the default Journal Entry sheet with the right-click context menu
+
 ## 0.4.0 - 14 Jul 2021 - GM only
 
 ## 0.3.2 - 20 Jun 2021 - Hotfix

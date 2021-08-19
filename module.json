@@ -3,7 +3,7 @@
   "title": "Journal Code Editor",
   "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor or Code Mirror.",
   "version": "This is auto replaced",
-  "minimumCoreVersion": "0.8.6",
+  "minimumCoreVersion": "0.8.8",
   "compatibleCoreVersion": "0.8.9",
   "scripts": [
     "scripts/module.js"
@@ -49,23 +49,5 @@
   "changelog": "https://raw.githubusercontent.com/arcanistzed/jce/main/CHANGELOG.md",
   "license": "https://raw.githubusercontent.com/arcanistzed/jce/blob/main/LICENSE",
   "bugs": "https://github.com/arcanistzed/jce/issues",
-  "media": [
-    {
-      "type": "screenshot",
-      "url": "https://img.itch.zone/aW1hZ2UvMTA2NDIyNi82MDkyODA4LnBuZw==/250x600/%2FzwV4F.png",
-      "caption": "Editing some Journal Entry HTML"
-    },
-    {
-      "type": "cover",
-      "url": "https://img.itch.zone/aW1hZ2UvMTEyNDU0My82NTA4NDgxLmdpZg==/347x500/rngeuv.gif",
-      "caption": "Journal Code Editor"
-    },
-    {
-      "type": "video",
-      "url": "https://youtu.be/xl8ILMAIGhM",
-      "loop": true,
-      "thumbnail": "",
-      "caption": "Showcase of JCE"
-    }
-  ]
+  "media": []
 }
