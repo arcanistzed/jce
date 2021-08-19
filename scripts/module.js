@@ -26,7 +26,7 @@ class Jce extends JournalSheet {
 		const context = super.getData();
 
 		// Add editor list to context
-		context.editors = Jce.EDITORS;
+		context.editors = Jce.EDITORS.filter(name => game.modules.get(name)?.active || name === "textarea");
 		return context;
 	};
 
@@ -39,6 +39,11 @@ class Jce extends JournalSheet {
 
 		// Get the editor choice select box
 		let selectBox = html[0].querySelector("#jce-select-editor");
+
+		// Change editor to default if the current one is no longer enabled
+		if (!game.modules.get(game.settings.get(Jce.ID, "editor"))?.active) {
+			game.settings.set(Jce.ID, "editor", "textarea");
+		};
 
 		// Activate the editor saved in settings
 		selectBox.value = game.settings.get(Jce.ID, "editor");
@@ -65,13 +70,7 @@ class Jce extends JournalSheet {
 	 * @param {HTMLElement} html - The element at the root of the sheet
 	*/
 	activateEditor(editorName, html) {
-		// Alert and exit if module not enabled
-		if (!game.modules.get(editorName)?.active && editorName !== "textarea") {
-			ui.notifications.error("JCE | You must enable " + editorName);
-			return;
-		};
-
-		// Get current Jounral Entry content
+		// Get current Journal Entry content
 		let sourceContent = this.object.data.content;
 
 		// Enable selected editor
