@@ -40,7 +40,8 @@ class Jce extends JournalSheet {
 		// Get the editor choice select box
 		let selectBox = html[0].querySelector("#jce-select-editor");
 
-		// Activate the currently selected editor
+		// Activate the editor saved in settings
+		selectBox.value = game.settings.get(Jce.ID, "editor");
 		this.activateEditor(selectBox.value, html[0]);
 
 		// Listen for whenever the select box changes
@@ -48,12 +49,15 @@ class Jce extends JournalSheet {
 			// Activate the corresponding editor
 			this.activateEditor(selectBox.value, html[0]);
 
-			// Hide select box
-			html[0].querySelector("#jce-sheet-header").style.display = "none";
+			// Save the current editor to settings
+			game.settings.set(Jce.ID, "editor", selectBox.value);
+
+			// Re-render the sheet
+			this.render(true);
 		});
 
 		// Save on submit
-		html[0].querySelector("#jce-save").addEventListener("click", this._updateObject);
+		html[0].querySelector("#jce-save").addEventListener("click", this._updateObject());
 	};
 
 	/** Activates a specific editor
@@ -67,8 +71,7 @@ class Jce extends JournalSheet {
 			return;
 		};
 
-		// Get current Jounral Entry data
-		let sourceId = this.object.id;
+		// Get current Jounral Entry content
 		let sourceContent = this.object.data.content;
 
 		// Enable selected editor
@@ -80,6 +83,9 @@ class Jce extends JournalSheet {
 
 			// Set ace options
 			editor.setOptions(ace.userSettings);
+			
+			// Update editor size to fill area
+			editor.resize();
 
 			// Set to html mode
 			editor.session.setMode("ace/mode/html");
@@ -98,6 +104,7 @@ class Jce extends JournalSheet {
 					})
 				}
 			});
+
 		} else if (editorName === "_CodeMirror") {
 			// Replace Div with Textarea
 			const textarea = document.createElement("textarea");
@@ -125,18 +132,18 @@ class Jce extends JournalSheet {
 		if (editorName === "acelib") {
 			editor = ace.edit("jce-editor");
 		} else if (editorName === "_CodeMirror") {
-			editor = document.querySelector("#jce-editor + .CodeMirror");
+			editor = document.querySelector("#jce-editor + .CodeMirror").CodeMirror;
 		};
 
 		// Create update package
 		const output = editor.getValue();
 		const data = {
-			_id: this.sourceId,
+			_id: this.object.id,
 			content: output
 		};
 
 		// Update if changes have been made
-		if (this.sourceContent !== output) JournalEntry.updateDocuments([data]);
+		if (this.object.data.content !== output) JournalEntry.updateDocuments([data]);
 		this.close();
 	};
 };
@@ -153,4 +160,35 @@ Hooks.on("documentSheetRegistrarInit", () => {
 		makeDefault: true,
 		label: "Journal Code Editor"
 	});
+});
+
+// Register a setting to store current editor
+Hooks.on("init", () => {
+	game.settings.register(Jce.ID, "editor", {
+        scope: "client",
+        config: false,
+        type: String,
+        default: Jce.EDITORS[0],
+    });
+});
+
+// Add context menu option for toggling JCE
+Hooks.on("getJournalDirectoryEntryContext", (_html, contextEntries) => {
+	if (game.user.isGM) { // Only show for GMs
+		contextEntries.push({
+			name: game.i18n.localize("jce.ContextMenu"),
+			icon: `<i class="fas fa-code"></i>`,
+			callback: data => {
+				// Get Journal Entry
+				let journalEntry = game.journal.get(data[0].dataset.entityId);
+
+				// Toggle sheet class flag
+				if (journalEntry.data.flags.core.sheetClass === "jce.Jce") {
+					journalEntry.setFlag("core", "sheetClass", "");
+				} else {
+					journalEntry.setFlag("core", "sheetClass", "jce.Jce");
+				};
+			}
+		});
+	};
 });
