@@ -4,7 +4,7 @@ class Jce extends JournalSheet {
 	static ID = "jce";
 
 	/** Compatible editor libraries */
-	static EDITORS = ["acelib", "_CodeMirror"]
+	static EDITORS = ["acelib", "_CodeMirror", "textarea"]
 
 	/** @override */
 	static get defaultOptions() {
@@ -66,7 +66,7 @@ class Jce extends JournalSheet {
 	*/
 	activateEditor(editorName, html) {
 		// Alert and exit if module not enabled
-		if (!game.modules.get(editorName)?.active) {
+		if (!game.modules.get(editorName)?.active && editorName !== "textarea") {
 			ui.notifications.error("JCE | You must enable " + editorName);
 			return;
 		};
@@ -107,9 +107,7 @@ class Jce extends JournalSheet {
 
 		} else if (editorName === "_CodeMirror") {
 			// Replace Div with Textarea
-			const textarea = document.createElement("textarea");
-			html.querySelector("#jce-editor").replaceWith(textarea);
-			textarea.id = "jce-editor";
+			let textarea = divToTextarea(html);
 
 			// Initialise Code Mirror
 			editor = CodeMirror.fromTextArea(textarea, {
@@ -121,6 +119,21 @@ class Jce extends JournalSheet {
 
 			// Set initial value
 			editor.setValue(sourceContent);
+		} else if (editorName === "textarea") {
+			// Replace Div with Textarea
+			let textarea = divToTextarea(html);
+			textarea.value = sourceContent;
+		};
+
+		/** Helper function to transform the Div into a Textarea
+		 * @param {HTMLElement} html - The element at the root of the sheet
+		 * @returns The new textarea
+		 */
+		function divToTextarea(html) {
+			const textarea = document.createElement("textarea");
+			html.querySelector("#jce-editor").replaceWith(textarea);
+			textarea.id = "jce-editor";
+			return textarea;
 		};
 	};
 
@@ -128,15 +141,18 @@ class Jce extends JournalSheet {
 	async _updateObject() {
 
 		// Get current editor
-		let editor, editorName = document.querySelector("#jce-select-editor").value;
+		let editor, output, editorName = document.querySelector("#jce-select-editor").value;
 		if (editorName === "acelib") {
 			editor = ace.edit("jce-editor");
+			output = editor.getValue();
 		} else if (editorName === "_CodeMirror") {
 			editor = document.querySelector("#jce-editor + .CodeMirror").CodeMirror;
+			output = editor.getValue();
+		} else if (editorName === "textarea") {
+			output = document.querySelector("#jce-editor").value;
 		};
 
 		// Create update package
-		const output = editor.getValue();
 		const data = {
 			_id: this.object.id,
 			content: output
