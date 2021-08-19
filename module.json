@@ -6,8 +6,7 @@
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.8.8",
   "scripts": [
-    "scripts/module.js",
-    "scripts/settings.js"
+    "scripts/module.js"
   ],
   "styles": [
     "styles/module.css"
