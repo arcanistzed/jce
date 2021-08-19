@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0
+## 2.0.0 - Complete Refactor 
 
 Complete Refactor to use the [Sheet Registrar library](https://github.com/League-of-Foundry-Developers/document-sheet-registrar/)
 Edit Journal Entries in the same window, rather than in a seperate application
