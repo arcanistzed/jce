@@ -82,7 +82,7 @@ class Jce extends JournalSheet {
 
 			// Set ace options
 			editor.setOptions(ace.userSettings);
-			
+
 			// Update editor size to fill area
 			editor.resize();
 
@@ -164,7 +164,7 @@ class Jce extends JournalSheet {
 };
 
 // Register new Journal Entry sheets
-Hooks.on("preDocumentSheetRegistrarInit", (settings) => {
+Hooks.on("preDocumentSheetRegistrarInit", settings => {
 	settings["JournalEntry"] = true;
 });
 
@@ -180,11 +180,11 @@ Hooks.on("documentSheetRegistrarInit", () => {
 // Register a setting to store current editor
 Hooks.on("init", () => {
 	game.settings.register(Jce.ID, "editor", {
-        scope: "client",
-        config: false,
-        type: String,
-        default: Jce.EDITORS[0],
-    });
+		scope: "client",
+		config: false,
+		type: String,
+		default: Jce.EDITORS[0],
+	});
 });
 
 // Add context menu option for toggling JCE
@@ -193,15 +193,26 @@ Hooks.on("getJournalDirectoryEntryContext", (_html, contextEntries) => {
 		contextEntries.push({
 			name: game.i18n.localize("jce.ContextMenu"),
 			icon: `<i class="fas fa-code"></i>`,
-			callback: data => {
+			callback: async data => {
 				// Get Journal Entry
-				let journalEntry = game.journal.get(data[0].dataset.entityId);
+				const journalEntry = game.journal.get(data[0].dataset.entityId);
+
+				// Get sheet
+				const sheet = journalEntry.sheet;
+
+				// JCE's sheet class
+				const sheetClass = "jce.Jce";
+
+				// Close sheet
+				await sheet.close();
+				journalEntry._sheet = null;
+				delete journalEntry.apps[sheet.appId];
 
 				// Toggle sheet class flag
-				if (journalEntry.data.flags.core.sheetClass === "jce.Jce") {
-					journalEntry.setFlag("core", "sheetClass", "");
+				if (journalEntry.data.flags.core.sheetClass === sheetClass) {
+					await journalEntry.setFlag("core", "sheetClass", "");
 				} else {
-					journalEntry.setFlag("core", "sheetClass", "jce.Jce");
+					await journalEntry.setFlag("core", "sheetClass", sheetClass);
 				};
 			}
 		});
