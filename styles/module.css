@@ -1,21 +1,27 @@
-.jce-grid {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 100%;
-  grid-template-rows: 1fr 2.3em;
-  grid-template-areas:
-    "editor"
-    "footer";
-  min-height: 18em;
-  row-gap: 0.5em;
+.jce-sheet {
+  display: flex;
 }
 
-#jce-editor, .CodeMirror {
+#jce-editor {
   position: relative;
   border-radius: 3px;
-  grid-area: editor;
+  flex: unset;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0.5em;
 }
 
-.jce-footer {
-  grid-area: footer;
+#jce-sheet-header {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+#jce-sheet-header > label {
+  margin: auto 0;
+}
+
+#jce-editor + .CodeMirror {
+  margin-bottom: 0.5em;
+  flex: 100%;
 }

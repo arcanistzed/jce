@@ -1,0 +1,19 @@
+<form class="{{cssClass}} flexcol">
+	<header id="jce-sheet-header">
+		<label for="jce-select-editor">Editor Library: </label>
+		<select id="jce-select-editor">
+			{{#each editors}}
+			<option>{{this}}</option>
+			{{/each}}
+		</select>
+	</header>
+
+	<div id="jce-editor"></div>
+
+	<footer class="jce-sheet-footer">
+		<button id="jce-save" type="submit" name="submit">
+			<i class="fa fa-check"></i>
+			{{localize "Save Changes"}}
+		</button>
+	</footer>
+</form>
