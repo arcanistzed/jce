@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/github/v/tag/arcanistzed/jce) ![Latest Release Download Count](https://img.shields.io/github/downloads/arcanistzed/jce/latest/module.zip?label=Downloads&style=flat-square&color=9b43a8) ![Foundry Core Compatible Version](https://img.shields.io/badge/dynamic/json.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Farcanistzed%2Fjce%2Fmain%2Fmodule.json&label=Foundry%20Core%20Compatible%20Version&query=$.compatibleCoreVersion&style=flat-square&color=ff6400)
 
-Journal Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using [Ace Editor](https://github.com/arcanistzed/acelib) or [Code Mirror](https://github.com/League-of-Foundry-Developers/codemirror-lib).
+Journal Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using the editor library of your choice.
 
 ## Installation
 

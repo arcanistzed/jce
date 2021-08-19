@@ -1,7 +1,7 @@
 {
   "name": "jce",
   "title": "Journal Code Editor",
-  "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using Ace editor or Code Mirror.",
+  "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using the editor library of your choice.",
   "version": "This is auto replaced",
   "minimumCoreVersion": "0.8.8",
   "compatibleCoreVersion": "0.8.9",
