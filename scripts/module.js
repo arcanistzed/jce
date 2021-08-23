@@ -209,7 +209,7 @@ Hooks.on("getJournalDirectoryEntryContext", (_html, contextEntries) => {
 				delete journalEntry.apps[sheet.appId];
 
 				// Toggle sheet class flag
-				if (journalEntry.data.flags.core.sheetClass === sheetClass) {
+				if (journalEntry.data.flags.core?.sheetClass === sheetClass) {
 					await journalEntry.setFlag("core", "sheetClass", "");
 				} else {
 					await journalEntry.setFlag("core", "sheetClass", sheetClass);
