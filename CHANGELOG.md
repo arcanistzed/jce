@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 - Fix Bug
+
+Fix TypeError when flags.core is nullish. Thanks @CS-Birb!
+
 ## 2.0.0 - Complete Refactor
 
 Complete Refactor to use the [Sheet Registrar library](https://github.com/League-of-Foundry-Developers/document-sheet-registrar/)
