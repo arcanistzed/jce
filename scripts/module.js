@@ -153,7 +153,7 @@ class Jce extends JournalSheet {
 
 		// Create update package
 		const data = {
-			_id: this.object.id,
+			id: this.object.id,
 			content: output
 		};
 
