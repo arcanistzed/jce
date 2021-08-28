@@ -45,9 +45,9 @@
   "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://raw.githubusercontent.com/arcanistzed/jce/blob/main/README.md",
-  "changelog": "https://raw.githubusercontent.com/arcanistzed/jce/main/CHANGELOG.md",
-  "license": "https://raw.githubusercontent.com/arcanistzed/jce/blob/main/LICENSE",
+  "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
+  "changelog": "https://github.com/arcanistzed/jce/blob/main/CHANGELOG.md",
+  "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
   "bugs": "https://github.com/arcanistzed/jce/issues",
   "media": []
 }
