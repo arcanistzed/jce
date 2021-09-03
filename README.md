@@ -6,7 +6,7 @@ Journal Code Editor is a module for Foundry VTT that allows you to modify the so
 
 ## Installation
 
-In the setup screen, use the URL `https://raw.githubusercontent.com/arcanistzed/jce/main/module.json` to install the module.
+In the setup screen, use the URL `https://github.com/arcanistzed/jce/releases/latest/download/module.json` to install the module.
 
 ## Usage
 
