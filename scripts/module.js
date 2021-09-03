@@ -37,6 +37,13 @@ class Jce extends JournalSheet {
 		// Everything below here is only needed if the sheet is editable
 		if (!this.options.editable) return;
 
+		// If this is not the GM, unregister this sheet and notify the user
+		if (!game.user.isGM) {
+			Journal.unregisterSheet?.(Jce.ID, Jce, { types: ["base"] });
+			ui.notifications.error("JCE | This module can only be used by the GM");
+			return;
+		}
+
 		// Get the editor choice select box
 		let selectBox = html[0].querySelector("#jce-select-editor");
 
@@ -153,7 +160,7 @@ class Jce extends JournalSheet {
 
 		// Create update package
 		const data = {
-			id: this.object.id,
+			_id: this.object.id,
 			content: output
 		};
 
