@@ -64,8 +64,11 @@ class Jce extends JournalSheet {
 			// Save the current editor to settings
 			game.settings.set(Jce.ID, "editor", selectBox.value);
 
-			// Re-render the sheet
-			this.render(true);
+			// Save value
+			this._updateObject();
+
+			// Activate the corresponding editor
+			this.activateEditor(selectBox.value, html[0]);
 		});
 
 		// Save on submit
