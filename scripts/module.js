@@ -175,13 +175,16 @@ Hooks.on("preDocumentSheetRegistrarInit", settings => {
 	settings["JournalEntry"] = true;
 });
 
-// Register JCE sheet
-Hooks.on("documentSheetRegistrarInit", () => {
-	Journal.registerSheet?.(Jce.ID, Jce, {
-		types: ["base"],
-		makeDefault: true,
-		label: "Journal Code Editor"
-	});
+// Register JCE sheets
+Hooks.on("ready", () => {
+	// Only if this is a GM
+	if (game.user.isGM) {
+		Journal.registerSheet?.(Jce.ID, Jce, {
+			types: ["base"],
+			makeDefault: true,
+			label: "Journal Code Editor"
+		});
+	};
 });
 
 // Register a setting to store current editor
