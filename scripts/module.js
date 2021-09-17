@@ -1,15 +1,15 @@
-/** Manage JCE Journal Sheet */
+/** Manage JCE Journal Sheet for editing content */
 class Jce extends JournalSheet {
 	/** The module's ID */
 	static ID = "jce";
 
 	/** Compatible editor libraries */
-	static EDITORS = ["acelib", "_CodeMirror", "textarea"]
+	static EDITORS = ["acelib", "_CodeMirror", "textarea"];
 
 	/** @override */
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			classes: ["jce-sheet", "sheet"],
+			classes: ["jce-sheet"],
 			template: `modules/jce/templates/sheet.hbs`,
 			id: 'journal-code-editor'
 		});
@@ -81,13 +81,13 @@ class Jce extends JournalSheet {
 	*/
 	activateEditor(editorName, html) {
 		// Get current Journal Entry content
-		let sourceContent = this.object.data.content;
+		const sourceContent = this.object.data.content;
 
 		// Enable selected editor
 		let editor;
 		if (editorName === "acelib") {
 
-			// Initialise ace editor
+			// Initialize ace editor
 			editor = ace.edit("jce-editor");
 
 			// Set ace options
@@ -111,14 +111,14 @@ class Jce extends JournalSheet {
 						module.init(editor);
 						editor.showKeyboardShortcuts();
 					})
-				}
+				},
 			});
 
 		} else if (editorName === "_CodeMirror") {
 			// Replace Div with Textarea
-			let textarea = divToTextarea(html);
+			const textarea = divToTextarea(html);
 
-			// Initialise Code Mirror
+			// Initialize Code Mirror
 			editor = CodeMirror.fromTextArea(textarea, {
 				mode: "html",
 				...CodeMirror.userSettings,
@@ -130,7 +130,7 @@ class Jce extends JournalSheet {
 			editor.setValue(sourceContent);
 		} else if (editorName === "textarea") {
 			// Replace Div with Textarea
-			let textarea = divToTextarea(html);
+			const textarea = divToTextarea(html);
 			textarea.value = sourceContent;
 		};
 
@@ -146,7 +146,10 @@ class Jce extends JournalSheet {
 		};
 	};
 
-	// When saved, update the Journal Entry with new data
+	/**
+	 * Update the Journal Entry with new data
+	 * @override
+	 */
 	async _updateObject() {
 
 		// Get current editor
