@@ -151,6 +151,7 @@ class Jce extends JournalSheet {
 		if (editorName === "acelib") {
 			editor = ace.edit("jce-editor");
 			output = editor.getValue();
+			editor.on("change", () => editor.resize()); // Adjust size whenever the editor is changed
 		} else if (editorName === "_CodeMirror") {
 			editor = document.querySelector("#jce-editor + .CodeMirror").CodeMirror;
 			output = editor.getValue();
