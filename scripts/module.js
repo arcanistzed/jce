@@ -212,7 +212,7 @@ Hooks.on("getJournalDirectoryEntryContext", (_html, contextEntries) => {
 			icon: `<i class="fas fa-code"></i>`,
 			callback: async data => {
 				// Get Journal Entry
-				const journalEntry = game.journal.get(data[0].dataset.entityId);
+				const journalEntry = game.journal.get(data[0].dataset.entityId || data[0].dataset.documentId);
 
 				// Get sheet
 				const sheet = journalEntry.sheet;
