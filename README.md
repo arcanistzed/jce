@@ -26,4 +26,4 @@ You can submit bugs via [Github Issues](https://github.com/arcanistzed/jce/issue
 
 ## Contact me
 
-Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=Journal%20Code%20Editor
+Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=Journal%20Code%20Editor%20module).
