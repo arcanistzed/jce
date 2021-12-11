@@ -151,7 +151,6 @@ class Jce extends JournalSheet {
 	 * @override
 	 */
 	async _updateObject() {
-
 		// Get current editor
 		let editor, output, editorName = document.querySelector("#jce-select-editor").value;
 		if (editorName === "acelib") {
@@ -173,7 +172,6 @@ class Jce extends JournalSheet {
 
 		// Update if changes have been made
 		if (this.object.data.content !== output) JournalEntry.updateDocuments([data]);
-		this.close();
 	};
 };
 
