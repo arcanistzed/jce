@@ -4,7 +4,7 @@
 
 * v9 compatibility
 
-## Fixed
+### Fixed
 
 * Minor bug fixes
 * Fixes to further restrict to GM only
