@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0 - 10 Dec 2021
+## 2.1.0 - 11 Dec 2021
 
 * v9 compatibility
 
