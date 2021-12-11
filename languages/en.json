@@ -1,5 +1,6 @@
 {
-  "jce": {
-    "ContextMenu": "Toggle opening with JCE"
-  }
+    "jce": {
+        "ContextMenu": "Toggle opening with JCE",
+        "DSRLibrary": "You must have the Document Sheet Registrar (DSR) Library enabled to use JCE with 0.8.x (or early v9), but disabled with later core versions"
+    }
 }

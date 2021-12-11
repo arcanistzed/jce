@@ -177,8 +177,9 @@ class Jce extends JournalSheet {
 	};
 };
 
-// Register new Journal Entry sheets
+// Register new Journal Entry sheets with Document Sheet Registrar (before v9.231)
 Hooks.on("preDocumentSheetRegistrarInit", settings => {
+	if (isNewerVersion("9.231", game.version || game.data.version))
 	settings["JournalEntry"] = true;
 });
 
@@ -191,6 +192,12 @@ Hooks.on("ready", () => {
 			makeDefault: true,
 			label: "Journal Code Editor"
 		});
+
+		// Alert if library is not enabled on versions before v9d2, or is enabled on later versions
+		if ((isNewerVersion("9.231", game.version || game.data.version) && !game.modules.get("_document-sheet-registrar")?.active)
+			// Or if it is enabled on versions after that
+			|| (!isNewerVersion("9.231", game.version || game.data.version) && game.modules.get("_document-sheet-registrar")?.active))
+			ui.notifications.error(`${Jce.ID} | ${game.i18n.format("jce.DSRLibrary")}`, { permanent: true });
 	};
 });
 
