@@ -1,13 +1,25 @@
 # Changelog
 
-## 2.0.1 - Fix Bug
+## 2.1.0 - 10 Dec 2021
+
+* v9 compatibility
+
+## Fixed
+
+* Minor bug fixes
+* Fixes to further restrict to GM only
+* Ace editor sizing
+* Don't close or re-render on save
+* Change between libraries without errors
+
+## 2.0.1 - 23 Aug 2021 - Fix Bug
 
 Fix TypeError when flags.core is nullish. Thanks @CS-Birb!
 
-## 2.0.0 - Complete Refactor
+## 2.0.0 - 19 Aug 2021 - Complete Refactor
 
 Complete Refactor to use the [Sheet Registrar library](https://github.com/League-of-Foundry-Developers/document-sheet-registrar/)
-Edit Journal Entries in the same window, rather than in a seperate application
+Edit Journal Entries in the same window, rather than in a separate application
 Easily switch between any of the supported editor libraries ([Ace Editor](https://github.com/arcanistzed/acelib) and [CodeMirror](https://github.com/League-of-Foundry-Developers/codemirror-lib))
 Simply edit Journals with the default textarea, so that you don't need to install anything else
 Toggle between using JCE and the default Journal Entry sheet with the right-click context menu
