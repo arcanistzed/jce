@@ -87,6 +87,9 @@ class Jce extends JournalSheet {
 		let editor;
 		if (editorName === "acelib") {
 
+			// Transform textarea to div
+			transformElement(html, "div");
+
 			// Initialize ace editor
 			editor = ace.edit("jce-editor");
 
@@ -115,8 +118,8 @@ class Jce extends JournalSheet {
 			});
 
 		} else if (editorName === "_CodeMirror") {
-			// Replace Div with Textarea
-			const textarea = divToTextarea(html);
+			// Transform div to textarea
+			const textarea = transformElement(html, "textarea");
 
 			// Initialize Code Mirror
 			editor = CodeMirror.fromTextArea(textarea, {
@@ -129,20 +132,21 @@ class Jce extends JournalSheet {
 			// Set initial value
 			editor.setValue(sourceContent);
 		} else if (editorName === "textarea") {
-			// Replace Div with Textarea
-			const textarea = divToTextarea(html);
+			// Transform div to textarea
+			const textarea = transformElement(html, "textarea");
 			textarea.value = sourceContent;
 		};
 
-		/** Helper function to transform the Div into a Textarea
+		/** Helper function to transform the Div into a Textarea and vice versa
 		 * @param {HTMLElement} html - The element at the root of the sheet
-		 * @returns The new textarea
+		 * @param {string} type - Either "div" or "textarea"
+		 * @returns The transformed element
 		 */
-		function divToTextarea(html) {
-			const textarea = document.createElement("textarea");
-			html.querySelector("#jce-editor").replaceWith(textarea);
-			textarea.id = "jce-editor";
-			return textarea;
+		function transformElement(html, type) {
+			const transformed = document.createElement(type);
+			html.querySelector("#jce-editor").replaceWith(transformed);
+			transformed.id = "jce-editor";
+			return transformed;
 		};
 	};
 
@@ -178,7 +182,7 @@ class Jce extends JournalSheet {
 // Register new Journal Entry sheets with Document Sheet Registrar (before v9.231)
 Hooks.on("preDocumentSheetRegistrarInit", settings => {
 	if (isNewerVersion("9.231", game.version || game.data.version))
-	settings["JournalEntry"] = true;
+		settings["JournalEntry"] = true;
 });
 
 // Register JCE sheets
