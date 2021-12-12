@@ -1,0 +1,27 @@
+<div class="tox-jce-wrap__backdrop"></div>
+<div id="tox-jce-modal">
+	<div id="tox-jce-header" role="presentation">
+		<div id="tox-jce-modal-title">Journal Code Editor</div>
+		<label for="jce-select-editor">Editor Library: </label>
+		<select id="jce-select-editor">
+			{{#each editors}}
+			<option>{{this}}</option>
+			{{/each}}
+		</select>
+		<button type="button" onclick="Jce.displayToxEditorModal(false)" id="tox-jce-close-button">
+			<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M17.953 7.453L13.422 12l4.531 4.547-1.406 1.406L12 13.422l-4.547 4.531-1.406-1.406L10.578 12 6.047 7.453l1.406-1.406L12 10.578l4.547-4.531z"
+					fill-rule="evenodd"></path>
+			</svg>
+		</button>
+	</div>
+	<div id="tox-jce-editor-container">
+		<div id="tox-jce-editor"></div>
+	</div>
+	<div id="tox-jce-footer">
+		<div role="presentation" id="tox-jce-footer-buttons">
+			<button title="Save" type="button" onclick="Jce.saveContent()" class="tox-jce-button">Save</button>
+		</div>
+	</div>
+	</div>

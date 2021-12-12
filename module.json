@@ -6,7 +6,8 @@
   "minimumCoreVersion": "0.8.8",
   "compatibleCoreVersion": "9",
   "scripts": [
-    "scripts/module.js"
+    "scripts/sheet.js",
+    "scripts/tinymce.js"
   ],
   "styles": [
     "styles/module.css"
