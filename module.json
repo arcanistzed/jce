@@ -2,24 +2,6 @@
   "name": "jce",
   "title": "Journal Code Editor",
   "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using the editor library of your choice.",
-  "version": "This is auto replaced",
-  "minimumCoreVersion": "0.8.8",
-  "compatibleCoreVersion": "9",
-  "esmodules": [
-    "scripts/sheet.js",
-    "scripts/tinymce.js"
-  ],
-  "styles": [
-    "styles/module.css"
-  ],
-  "manifestPlusVersion": "1.2.0",
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
-  ],
   "author": "Arcanist",
   "authors": [
     {
@@ -31,11 +13,32 @@
     }
   ],
   "url": "This is auto replaced",
+  "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
+  "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
+  "bugs": "https://github.com/arcanistzed/jce/issues/new/choose",
+  "changelog": "https://github.com/arcanistzed/jce/blob/main/CHANGELOG.md",
+  "flags": {
+    "allowBugReporter": true
+  },
+  "version": "This is auto replaced",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": 9,
+  "esmodules": [
+    "scripts/sheet.js",
+    "scripts/tinymce.js"
+  ],
+  "styles": [
+    "styles/module.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
-  "changelog": "https://github.com/arcanistzed/jce/blob/main/CHANGELOG.md",
-  "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
-  "bugs": "https://github.com/arcanistzed/jce/issues",
+  "manifestPlusVersion": "1.2.0",
   "media": []
 }
