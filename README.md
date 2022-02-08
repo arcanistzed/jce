@@ -4,6 +4,8 @@
 
 Journal Code Editor is a module for Foundry VTT that allows you to modify the source code of your Journal Entries using the editor library of your choice.
 
+https://github.com/League-of-Foundry-Developers/foundryvtt-forien-quest-log/blob/master/src/control/TinyMCE.js#L80-L131 & L66
+
 ## Installation
 
 In the setup screen, use the URL `https://github.com/arcanistzed/jce/releases/latest/download/module.json` to install the module.
@@ -14,11 +16,9 @@ Just right click on a journal entry in the sidebar and you will see an option to
 
 If you have enabled a supported editor library, you can use them instead of the default textarea. Currently, JCE supports [Ace Editor](https://github.com/arcanistzed/acelib) and [CodeMirror](https://github.com/League-of-Foundry-Developers/codemirror-lib).
 
-## License
+## Support
 
-Copyright © 2021 arcanist
-
-This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
+Please consider supporting me on [my Patreon](https://patreon.com/arcanistzed) if you like my work. You can see a list of all my projects on [my website](https://arcanist.me).
 
 ## Bugs
 
@@ -27,3 +27,9 @@ You can submit bugs via [Github Issues](https://github.com/arcanistzed/jce/issue
 ## Contact me
 
 Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=Journal%20Code%20Editor%20module).
+
+## License
+
+Copyright © 2021 arcanist
+
+This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
