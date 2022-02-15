@@ -11,14 +11,14 @@ class Jce extends JournalSheet {
 		return mergeObject(super.defaultOptions, {
 			classes: ["jce-sheet"],
 			template: `modules/jce/templates/sheet.hbs`,
-			id: 'journal-code-editor'
+			id: "journal-code-editor",
 		});
-	};
+	}
 
 	/** @override */
 	get template() {
 		return "modules/jce/templates/sheet.hbs";
-	};
+	}
 
 	/** @override */
 	getData() {
@@ -28,7 +28,7 @@ class Jce extends JournalSheet {
 		// Add editor list to context
 		context.editors = Jce.EDITORS.filter(name => game.modules.get(name)?.active || name === "textarea");
 		return context;
-	};
+	}
 
 	/** @override */
 	activateListeners(html) {
@@ -50,7 +50,7 @@ class Jce extends JournalSheet {
 		// Change editor to default if the current one is no longer enabled
 		if (!game.modules.get(game.settings.get(Jce.ID, "editor"))?.active) {
 			game.settings.set(Jce.ID, "editor", "textarea");
-		};
+		}
 
 		// Activate the editor saved in settings
 		selectBox.value = game.settings.get(Jce.ID, "editor");
@@ -73,7 +73,7 @@ class Jce extends JournalSheet {
 
 		// Save on submit
 		html[0].querySelector("#jce-save").addEventListener("click", this._updateObject());
-	};
+	}
 
 	/** Activates a specific editor
 	 * @param {String} editorName - The name of the editor to activate
@@ -135,7 +135,7 @@ class Jce extends JournalSheet {
 			// Transform div to textarea
 			const textarea = transformElement(html, "textarea");
 			textarea.value = sourceContent;
-		};
+		}
 
 		/** Helper function to transform the Div into a Textarea and vice versa
 		 * @param {HTMLElement} html - The element at the root of the sheet
@@ -147,8 +147,8 @@ class Jce extends JournalSheet {
 			html.querySelector("#jce-editor").replaceWith(transformed);
 			transformed.id = "jce-editor";
 			return transformed;
-		};
-	};
+		}
+	}
 
 	/**
 	 * Update the Journal Entry with new data
@@ -166,18 +166,18 @@ class Jce extends JournalSheet {
 			output = editor.getValue();
 		} else if (editorName === "textarea") {
 			output = document.querySelector("#jce-editor").value;
-		};
+		}
 
 		// Create update package
 		const data = {
 			_id: this.object.id,
 			content: output
-		};
+		}
 
 		// Update if changes have been made
 		if (this.object.data.content !== output) JournalEntry.updateDocuments([data]);
-	};
-};
+	}
+}
 
 // Register new Journal Entry sheets with Document Sheet Registrar (before v9.231)
 Hooks.on("preDocumentSheetRegistrarInit", settings => {
@@ -200,7 +200,7 @@ Hooks.on("ready", () => {
 			// Or if it is enabled on versions after that
 			|| (!isNewerVersion("9.231", game.version || game.data.version) && game.modules.get("_document-sheet-registrar")?.active))
 			ui.notifications.error(`${Jce.ID} | ${game.i18n.format("jce.DSRLibrary")}`, { permanent: true });
-	};
+	}
 });
 
 // Register a setting to store current editor
@@ -217,30 +217,27 @@ Hooks.on("init", () => {
 Hooks.on("getJournalDirectoryEntryContext", (_html, contextEntries) => {
 	if (game.user.isGM) { // Only show for GMs
 		contextEntries.push({
-			name: game.i18n.localize("jce.ContextMenu"),
+			name: "jce.ContextMenu",
 			icon: `<i class="fas fa-code"></i>`,
 			callback: async data => {
 				// Get Journal Entry
 				const journalEntry = game.journal.get(data[0].dataset.entityId || data[0].dataset.documentId);
 
-				// Get sheet
-				const sheet = journalEntry.sheet;
-
 				// JCE's sheet class
 				const sheetClass = "jce.Jce";
 
 				// Close sheet
-				await sheet.close();
+				await journalEntry.sheet.close();
 				journalEntry._sheet = null;
-				delete journalEntry.apps[sheet.appId];
+				delete journalEntry.apps[journalEntry.sheet.appId];
 
 				// Toggle sheet class flag
 				if (journalEntry.data.flags.core?.sheetClass === sheetClass) {
 					await journalEntry.setFlag("core", "sheetClass", "");
 				} else {
 					await journalEntry.setFlag("core", "sheetClass", sheetClass);
-				};
+				}
 			}
 		});
-	};
+	}
 });
