@@ -1,0 +1,6 @@
+{
+	"jce": {
+		"ContextMenu": "Habilitar abrir usando JCE",
+		"DSRLibrary": "Debe tener la biblioteca ‘Registrador de Hojas de Documentos’(DSR) activada para usar JCE con 0.8.x (o anteriores a v9),pero debe estar desactivada para versiones posteriores"
+	}
+}
