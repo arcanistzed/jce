@@ -1,48 +1,52 @@
 {
-  "id": "jce",
-  "name": "jce",
-  "title": "Journal Code Editor",
-  "description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using the editor library of your choice.",
-  "authors": [
-    {
-      "name": "Arcanist",
-      "url": "https://arcanist.me",
-      "email": "arcanistzed@gmail.com",
-      "discord": "arcanist#4317",
-      "reddit": "u/arcanistzed"
-    }
-  ],
-  "url": "This is auto replaced",
-  "license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
-  "readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
-  "bugs": "https://github.com/arcanistzed/jce/issues/new/choose",
-  "changelog": "https://github.com/arcanistzed/jce/blob/main/CHANGELOG.md",
-  "flags": {
-    "allowBugReporter": true
-  },
-  "version": "This is auto replaced",
-  "compatibility": {
-    "minimum": "0.8.9",
-    "verified": "10"
-  },
-  "minimumCoreVersion": "0.8.9",
-  "compatibleCoreVersion": "10",
-  "esmodules": [
-    "scripts/sheet.js",
-    "scripts/tinymce.js"
-  ],
-  "styles": [
-    "styles/module.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
-  ],
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "manifestPlusVersion": "1.2.0",
-  "media": []
+	"id": "jce",
+	"name": "jce",
+	"title": "Journal Code Editor",
+	"description": "Journal Code Editor is a module for FoundryVTT that allows you to modify the source of your Journal Entries using the editor library of your choice.",
+	"authors": [
+		{
+			"name": "Arcanist",
+			"url": "https://arcanist.me",
+			"email": "arcanistzed@gmail.com",
+			"discord": "arcanist#4317",
+			"reddit": "u/arcanistzed"
+		}
+	],
+	"url": "This is auto replaced",
+	"license": "https://github.com/arcanistzed/jce/blob/main/LICENSE",
+	"readme": "https://github.com/arcanistzed/jce/blob/main/README.md",
+	"bugs": "https://github.com/arcanistzed/jce/issues/new/choose",
+	"changelog": "https://github.com/arcanistzed/jce/blob/main/CHANGELOG.md",
+	"flags": {
+		"allowBugReporter": true
+	},
+	"version": "This is auto replaced",
+	"compatibility": {
+		"minimum": "0.8.9",
+		"verified": "10"
+	},
+	"minimumCoreVersion": "0.8.9",
+	"compatibleCoreVersion": "10",
+	"esmodules": [
+		"scripts/jce.js"
+	],
+	"styles": [
+		"styles/jce.css"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		},
+		{
+			"lang": "es",
+			"name": "Español",
+			"path": "languages/es.json"
+		}
+	],
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced",
+	"manifestPlusVersion": "1.2.0",
+	"media": []
 }

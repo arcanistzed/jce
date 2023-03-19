@@ -1,0 +1,28 @@
+#jce-sheet-header {
+	display: flex;
+	gap: 1em;
+	margin-bottom: 0.5em;
+}
+
+#jce-sheet-header > label {
+	margin: auto 0;
+}
+.jce-sheet {
+	display: flex;
+}
+#jce-editor-container {
+	position: relative;
+	border-radius: 3px;
+	flex: unset;
+	height: 100%;
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+#jce-editor-container + .CodeMirror {
+	margin-bottom: 0.5em;
+	flex: 100%;
+}
+
+#jce-editor {
+	height: 100%;
+}
